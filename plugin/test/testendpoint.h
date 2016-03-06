@@ -10,8 +10,10 @@ class TestEndpoint : public Node
 public:
     explicit TestEndpoint(QObject *parent = 0);
 
+    void bang();
+
 public slots:
-    void onDataReceived(QByteArray& data) override;
+    void onDataReceived(QByteArray* data) override;
 
 private:
     static const QString TAG;

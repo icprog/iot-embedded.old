@@ -11,10 +11,10 @@ public:
     virtual ~Node() {}
 
 public slots:
-    virtual void onDataReceived(QByteArray& data) = 0 ;
+    virtual void onDataReceived(QByteArray* data) = 0 ;
 
 signals:
-    void dataSent(QByteArray& data);
+    void dataSent(QByteArray* data);
 };
 
 #endif // NODE_H

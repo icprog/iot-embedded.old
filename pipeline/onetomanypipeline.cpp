@@ -13,7 +13,9 @@ void OneToManyPipeline::setInboundChannel(Node &channel){
 
 void OneToManyPipeline::setOutboundChannel(Node &channel){
     this->outbound_channels_.push_back(&channel);
-    connect(this->inbound_channel_, SIGNAL(dataSent(QByteArray)), this->outbound_channels_.last(), SLOT(onDataAvaliable(QByteArray)));
+//    qRegisterMetaType<QByteArray&>();
+    connect(this->inbound_channel_, &Node::dataSent, this->outbound_channels_.last(), &Node::onDataReceived);
+//    connect(this->inbound_channel_, SIGNAL(dataSent(QByteArray)), this->outbound_channels_.last(), SLOT(onDataAvaliable(QByteArray)));
 
 }
 void OneToManyPipeline::addOutboundChannel(Node &sink){
