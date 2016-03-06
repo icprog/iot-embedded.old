@@ -14,9 +14,9 @@ class OneToManyPipeline : public QObject, public Pipeline
 public:
     explicit OneToManyPipeline(QObject *parent = 0);
 
-    void setInboundChannel(DataSink &channel) override final;
-    void setOutboundChannel(DataSource &channel) override final;
-    void addOutboundChannel(DataSource &sink);
+    void setInboundChannel(Node &channel) override final;
+    void setOutboundChannel(Node &channel) override final;
+    void addOutboundChannel(Node &sink);
 
 
 signals:
@@ -24,8 +24,8 @@ signals:
 public slots:
 
 private:
-    DataSink* inbound_channel_;
-    QVector<DataSource*> outbound_channels_;
+    Node* inbound_channel_;
+    QVector<Node*> outbound_channels_;
 };
 
 #endif // ONETOMANYPIPELINE_H

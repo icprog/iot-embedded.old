@@ -14,14 +14,16 @@ INCLUDEPATH += pipeline \
 
 SOURCES += main.cpp \
     pipeline/onetomanypipeline.cpp \
-    plugin/dummyendpoint.cpp
+    plugin/test/testendpoint.cpp \
+    plugin/test/testendpointfactory.cpp
 
 HEADERS += \
     pipeline/datasink.h \
     pipeline/datasource.h \
     pipeline/onetomanypipeline.h \
     pipeline/pipeline.h \
-    plugin/interfaces/endpoint.h \
-    plugin/dummyendpoint.h \
-    worker.h
+    plugin/interfaces/node.h \
+    plugin/interfaces/nodefactory.h \
+    plugin/test/testendpoint.h \
+    plugin/test/testendpointfactory.h
 

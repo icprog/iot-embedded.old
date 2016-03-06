@@ -1,15 +1,13 @@
 #ifndef PIPELINE_H
 #define PIPELINE_H
 
-#include "datasink.h"
-#include "datasource.h"
-
+#include "node.h"
 
 class Pipeline {
 public:
     virtual ~Pipeline() {}
-    virtual void setInboundChannel(DataSink &channel) = 0;
-    virtual void setOutboundChannel(DataSource &channel) = 0;
+    virtual void setInboundChannel(Node &channel) = 0;
+    virtual void setOutboundChannel(Node &channel) = 0;
 };
 
 

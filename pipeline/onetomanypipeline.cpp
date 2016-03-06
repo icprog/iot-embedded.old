@@ -6,16 +6,16 @@ OneToManyPipeline::OneToManyPipeline(QObject *parent) : QObject(parent),
 
 }
 
-void OneToManyPipeline::setInboundChannel(DataSink &channel){
+void OneToManyPipeline::setInboundChannel(Node &channel){
     this->inbound_channel_ = &channel;
 
 }
 
-void OneToManyPipeline::setOutboundChannel(DataSource &channel){
+void OneToManyPipeline::setOutboundChannel(Node &channel){
     this->outbound_channels_.push_back(&channel);
     connect(this->inbound_channel_, SIGNAL(dataSent(QByteArray)), this->outbound_channels_.last(), SLOT(onDataAvaliable(QByteArray)));
 
 }
-void OneToManyPipeline::addOutboundChannel(DataSource &sink){
+void OneToManyPipeline::addOutboundChannel(Node &sink){
     setOutboundChannel(sink);
 }

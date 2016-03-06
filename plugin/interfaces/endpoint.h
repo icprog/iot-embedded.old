@@ -9,8 +9,8 @@ class Endpoint {
 public:
     virtual ~Endpoint() {}
 
-    virtual DataSource &getSource() = 0;
-    virtual DataSink &getSink() = 0;
+    virtual DataSource* getSource() const = 0;
+    virtual DataSink* getSink() const = 0;
 
 };
 
