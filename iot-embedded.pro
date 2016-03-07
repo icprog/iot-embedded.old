@@ -15,7 +15,8 @@ INCLUDEPATH += pipeline \
 SOURCES += main.cpp \
     pipeline/onetomanypipeline.cpp \
     plugin/test/testendpoint.cpp \
-    plugin/test/testendpointfactory.cpp
+    plugin/test/testendpointfactory.cpp \
+    plugin/utils/concurrentqueue.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -25,5 +26,6 @@ HEADERS += \
     plugin/interfaces/node.h \
     plugin/interfaces/nodefactory.h \
     plugin/test/testendpoint.h \
-    plugin/test/testendpointfactory.h
+    plugin/test/testendpointfactory.h \
+    plugin/utils/concurrentqueue.h
 
