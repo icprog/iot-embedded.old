@@ -1,25 +1,33 @@
 #ifndef CONCURRENTQUEUE_H
 #define CONCURRENTQUEUE_H
 
-#include <QObject>
 #include <QQueue>
 #include <QMutex>
 
 template <typename T>
-class ConcurrentQueue final : public QObject
+class ConcurrentQueue final
 {
-    Q_OBJECT
 public:
-    explicit ConcurrentQueue(QObject *parent = 0);
+    ConcurrentQueue():{ }
 
-    void enqueue(const T &item);
-    T& dequeue();
+    void enqueue(const T &item){
+        QMutexLocker locker(&this->lock);
+        this->queue_.enqueue(item);
+    }
+
+    T& dequeue(){
+        QMutexLocker locker(&this->lock);
+        return this->queue_.dequeue();
+    }
 
 
 
 private:
     QQueue<T> queue_;
     QMutex lock;
+
+
+    const static QString TAG;
 };
 
 #endif // CONCURRENTQUEUE_H
