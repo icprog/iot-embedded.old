@@ -6,8 +6,8 @@
 class Pipeline {
 public:
     virtual ~Pipeline() {}
-    virtual void setInboundChannel(Node &channel) = 0;
-    virtual void setOutboundChannel(Node &channel) = 0;
+    virtual void setInboundChannel(Node *channel) = 0;
+    virtual void setOutboundChannel(Node *channel) = 0;
 };
 Q_DECLARE_METATYPE(QByteArray)
 

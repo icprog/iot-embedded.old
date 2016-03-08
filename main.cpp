@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 
     Pipeline* p1 = new OneToManyPipeline();
 
-    p1->setInboundChannel(*n_a);
+    p1->setInboundChannel(n_a);
 
-    p1->setOutboundChannel(*n_b);
+    p1->setOutboundChannel(n_b);
 
     TestEndpoint* e = dynamic_cast<TestEndpoint*>(n_a);
     e->bang();
