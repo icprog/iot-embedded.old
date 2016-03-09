@@ -17,6 +17,7 @@ SOURCES += main.cpp \
     plugin/test/testendpoint.cpp \
     plugin/test/testendpointfactory.cpp \
     pipeline/utils/dataitem.cpp \
+    plugin/sensor/sensorendpoint.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -29,4 +30,5 @@ HEADERS += \
     plugin/test/testendpointfactory.h \
     pipeline/utils/concurrentqueue.h \
     pipeline/utils/dataitem.h \
+    plugin/sensor/sensorendpoint.h
 
