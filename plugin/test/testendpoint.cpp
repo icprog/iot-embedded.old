@@ -11,11 +11,14 @@ TestEndpoint::TestEndpoint(QObject *parent) : Node(parent)
 void TestEndpoint::bang()
 {
     qDebug()<<TAG<< ": BANG! from thread: "<<QThread::currentThreadId();
-    QByteArray dupa(10, 'z');
-    emit dataSent(&dupa);
+
+    test_queue_.enqueue(DataItem());
+    emit dataSent(&test_queue_);
 }
 
-void TestEndpoint::onDataReceived(QByteArray *data)
+void TestEndpoint::onDataReceived(ConcurrentQueue<DataItem> *data)
 {
+    data->dequeue();
     qDebug()<<TAG << ": onDataReceived, thread: " << QThread::currentThreadId();
+    bang();
 }

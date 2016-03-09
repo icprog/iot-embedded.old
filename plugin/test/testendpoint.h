@@ -13,10 +13,12 @@ public:
     void bang();
 
 public slots:
-    void onDataReceived(QByteArray* data) override;
+    void onDataReceived(ConcurrentQueue<DataItem>* data) override;
 
 private:
     static const QString TAG;
+
+    ConcurrentQueue<DataItem> test_queue_;
 };
 
 #endif // TESTENDPOINT_H
