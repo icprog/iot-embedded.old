@@ -2,6 +2,8 @@
 #define NODE_H
 #include <QObject>
 #include <QByteArray>
+#include "utils/concurrentqueue.h"
+#include "utils/dataitem.h"
 
 class Node : public QObject
 {
@@ -11,10 +13,10 @@ public:
     virtual ~Node() {}
 
 public slots:
-    virtual void onDataReceived(QByteArray* data) = 0 ;
+    virtual void onDataReceived(ConcurrentQueue<DataItem> *queue) = 0 ;
 
 signals:
-    void dataSent(QByteArray* data);
+    void dataSent(ConcurrentQueue<DataItem> *queue);
 };
 
 #endif // NODE_H

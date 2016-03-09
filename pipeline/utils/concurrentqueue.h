@@ -8,24 +8,21 @@ template <typename T>
 class ConcurrentQueue final
 {
 public:
-    ConcurrentQueue():{ }
+    ConcurrentQueue(){ }
 
     void enqueue(const T &item){
         QMutexLocker locker(&this->lock);
         this->queue_.enqueue(item);
     }
 
-    T& dequeue(){
+    T dequeue(){
         QMutexLocker locker(&this->lock);
         return this->queue_.dequeue();
     }
 
-
-
 private:
     QQueue<T> queue_;
     QMutex lock;
-
 
     const static QString TAG;
 };
