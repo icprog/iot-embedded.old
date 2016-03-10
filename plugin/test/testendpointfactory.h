@@ -8,7 +8,7 @@
 class TestEndpointFactory : public QObject, public NodeFactory
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "com.jmssolutions.iot.embedded.plugin.node.TestEndpoint")
+//    Q_PLUGIN_METADATA(IID "com.jmssolutions.iot.embedded.plugin.node.TestEndpoint")
     Q_INTERFACES(NodeFactory)
 
 public:

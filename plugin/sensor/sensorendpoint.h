@@ -3,13 +3,22 @@
 #include <QObject>
 
 #include "node.h"
+#include "sensorprocessor.h"
 
 
 class SensorEndpoint : public Node
 {
     Q_OBJECT
 public:
-    SensorEndpoint();
+    explicit SensorEndpoint(QObject *parent = 0);
+
+    void setProcessor(SensorProcessor *processor);
+
+public slots:
+    virtual void onDataReceived(ConcurrentQueue<DataItem>* queue);
+
+private:
+    SensorProcessor* processor_;
 };
 
 #endif // SENSORENDPOINT_H

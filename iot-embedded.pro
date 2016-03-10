@@ -10,14 +10,18 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 INCLUDEPATH += pipeline \
-               plugin/interfaces
+               plugin/interfaces \
+               plugin/interfaces/sensor
 
 SOURCES += main.cpp \
     pipeline/onetomanypipeline.cpp \
     plugin/test/testendpoint.cpp \
     plugin/test/testendpointfactory.cpp \
     pipeline/utils/dataitem.cpp \
-    plugin/sensor/sensorendpoint.cpp
+    plugin/sensor/sensorendpoint.cpp \
+    plugin/sensor/sensorprocessor.cpp \
+    plugin/sensor/system_telemetry/systemtelemetryprocessor.cpp \
+    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -30,5 +34,8 @@ HEADERS += \
     plugin/test/testendpointfactory.h \
     pipeline/utils/concurrentqueue.h \
     pipeline/utils/dataitem.h \
-    plugin/sensor/sensorendpoint.h
+    plugin/sensor/sensorendpoint.h \
+    plugin/sensor/sensorprocessor.h \
+    plugin/sensor/system_telemetry/systemtelemetryprocessor.h \
+    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h
 
