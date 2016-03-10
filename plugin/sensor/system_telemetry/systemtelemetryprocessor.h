@@ -1,6 +1,7 @@
 #ifndef SYSTEMTELEMETRYSENSOR_H
 #define SYSTEMTELEMETRYSENSOR_H
 #include "plugin/sensor/sensorprocessor.h"
+#include <QFile>
 
 class SystemTelemetryProcessor: public SensorProcessor
 {
@@ -15,6 +16,10 @@ private slots:
 
 private:
     const static QString TAG;
+
+    QFile* proc_loadavg_;
+    QFile* proc_meminfo_;
+    QFile* proc_stat_;
 };
 
 #endif // SYSTEMTELEMETRYSENSOR_H
