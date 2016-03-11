@@ -1,6 +1,7 @@
 #ifndef SYSTEMTELEMETRYSENSOR_H
 #define SYSTEMTELEMETRYSENSOR_H
 #include "plugin/sensor/sensorprocessor.h"
+#include "systemdataprovider.h"
 #include <QFile>
 
 class SystemTelemetryProcessor: public SensorProcessor
@@ -20,6 +21,8 @@ private:
     QFile* proc_loadavg_;
     QFile* proc_meminfo_;
     QFile* proc_stat_;
+
+    SystemDataProvider *data_provider_;
 };
 
 #endif // SYSTEMTELEMETRYSENSOR_H

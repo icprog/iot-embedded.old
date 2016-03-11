@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     plugin/sensor/sensorendpoint.cpp \
     plugin/sensor/sensorprocessor.cpp \
     plugin/sensor/system_telemetry/systemtelemetryprocessor.cpp \
-    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp
+    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp \
+    plugin/sensor/system_telemetry/systemdataprovider.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -37,5 +38,6 @@ HEADERS += \
     plugin/sensor/sensorendpoint.h \
     plugin/sensor/sensorprocessor.h \
     plugin/sensor/system_telemetry/systemtelemetryprocessor.h \
-    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h
+    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h \
+    plugin/sensor/system_telemetry/systemdataprovider.h
 
