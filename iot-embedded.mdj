@@ -1504,6 +1504,913 @@
 							"isFinalSpecialization": false,
 							"isLeaf": false,
 							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTe6hbG1rykEk=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "ApplicationContextLoader",
+							"ownedElements": [
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFTfDf/4W84ZBk=",
+									"_parent": {
+										"$ref": "AAAAAAFTe6hbG1rykEk="
+									},
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTfDf/4W85IA4=",
+										"_parent": {
+											"$ref": "AAAAAAFTfDf/4W84ZBk="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTe6hbG1rykEk="
+										},
+										"visibility": "public",
+										"navigable": true,
+										"aggregation": "none",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTfDf/4W86F40=",
+										"_parent": {
+											"$ref": "AAAAAAFTfDf/4W84ZBk="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTfDdp2mr7ZkI="
+										},
+										"visibility": "public",
+										"navigable": true,
+										"aggregation": "composite",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"visibility": "public",
+									"isDerived": false
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFTfEN6+rUY7c8=",
+									"_parent": {
+										"$ref": "AAAAAAFTe6hbG1rykEk="
+									},
+									"name": "creates",
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTfEN6+rUZLKk=",
+										"_parent": {
+											"$ref": "AAAAAAFTfEN6+rUY7c8="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTe6hbG1rykEk="
+										},
+										"visibility": "public",
+										"navigable": false,
+										"aggregation": "none",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTfEN6+rUa3f0=",
+										"_parent": {
+											"$ref": "AAAAAAFTfEN6+rUY7c8="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTfDxZuYmanCw="
+										},
+										"visibility": "public",
+										"navigable": true,
+										"aggregation": "none",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"visibility": "public",
+									"isDerived": false
+								}
+							],
+							"visibility": "public",
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFTfDkYHHUrR/Q=",
+									"_parent": {
+										"$ref": "AAAAAAFTe6hbG1rykEk="
+									},
+									"name": "nodeContainer",
+									"visibility": "private",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": {
+										"$ref": "AAAAAAFTdkrqhXdb0O4="
+									},
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"isDerived": false,
+									"aggregation": "none",
+									"isID": false
+								}
+							],
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfDpyKXhC3DQ=",
+									"_parent": {
+										"$ref": "AAAAAAFTe6hbG1rykEk="
+									},
+									"name": "loadApplicationContext",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfDrE+njQJN8=",
+											"_parent": {
+												"$ref": "AAAAAAFTfDpyKXhC3DQ="
+											},
+											"name": "filePath",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "String",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfDdp2mr7ZkI=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "Application",
+							"visibility": "public",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfEGbkZ7huEU=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDdp2mr7ZkI="
+									},
+									"name": "run",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfDwaYYh9an4=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "OneToManyPipeline",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfD1AiY5ibBI=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"target": {
+										"$ref": "AAAAAAFTfDxZuYmanCw="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"attributes": [
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFTfD4YvJblHrM=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"name": "inboundChannel",
+									"visibility": "private",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": {
+										"$ref": "AAAAAAFTdk4LzXfJBFI="
+									},
+									"multiplicity": "1",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"isDerived": false,
+									"aggregation": "none",
+									"isID": false
+								},
+								{
+									"_type": "UMLAttribute",
+									"_id": "AAAAAAFTfD44HZeptNY=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"name": "outboundChannel",
+									"visibility": "private",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": {
+										"$ref": "AAAAAAFTdk4LzXfJBFI="
+									},
+									"multiplicity": "1..*",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"isDerived": false,
+									"aggregation": "none",
+									"isID": false
+								}
+							],
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfD2hwrRv19c=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"name": "setInboundChannel",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfD2hwrRwXMo=",
+											"_parent": {
+												"$ref": "AAAAAAFTfD2hwrRv19c="
+											},
+											"name": "node",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTdk4LzXfJBFI="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfD2u6bRxf5I=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"name": "setOutboundChannel",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfD2u6bRyarA=",
+											"_parent": {
+												"$ref": "AAAAAAFTfD2u6bRxf5I="
+											},
+											"name": "node",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTdk4LzXfJBFI="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfD3UcpURrAw=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDwaYYh9an4="
+									},
+									"name": "addOutboundChannel",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfD4I3JZBVE0=",
+											"_parent": {
+												"$ref": "AAAAAAFTfD3UcpURrAw="
+											},
+											"name": "node",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTdk4LzXfJBFI="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfEZOidHtJJ4=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "RestEndpoint",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfEdZOtbsrgI=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEZOidHtJJ4="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfEZOidHtJJ4="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdk4LzXfJBFI="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfEaKGdKdbJg=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEZOidHtJJ4="
+									},
+									"name": "getName",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfEbG7tRavVg=",
+											"_parent": {
+												"$ref": "AAAAAAFTfEaKGdKdbJg="
+											},
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "String",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "return"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfEaf6dMqU4s=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEZOidHtJJ4="
+									},
+									"name": "onDataReceived",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfEcX3tT/RRs=",
+											"_parent": {
+												"$ref": "AAAAAAFTfEaf6dMqU4s="
+											},
+											"name": "ConcurrentQueue",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfEcX3tUAAYE=",
+											"_parent": {
+												"$ref": "AAAAAAFTfEaf6dMqU4s="
+											},
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "void",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "return"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfEfvOt1UDlM=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "RestEndpointFactory",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfEhCUuOf5Ro=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEfvOt1UDlM="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfEfvOt1UDlM="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdlCXPHhbvR0="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfEj0g7RzIhA=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEfvOt1UDlM="
+									},
+									"name": "createNode",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfEj0g7R0zag=",
+											"_parent": {
+												"$ref": "AAAAAAFTfEj0g7RzIhA="
+											},
+											"name": "name",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "String",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfEj0g7R1+AY=",
+											"_parent": {
+												"$ref": "AAAAAAFTfEj0g7RzIhA="
+											},
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTfEZOidHtJJ4="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "return"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTdlnU13ymhTs=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "SystemTelemetrySensorFactory",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTdloVXnz3Vx4=",
+									"_parent": {
+										"$ref": "AAAAAAFTdlnU13ymhTs="
+									},
+									"source": {
+										"$ref": "AAAAAAFTdlnU13ymhTs="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdlCXPHhbvR0="
+									},
+									"visibility": "public"
+								},
+								{
+									"_type": "UMLAssociation",
+									"_id": "AAAAAAFTdl4JroHh/mc=",
+									"_parent": {
+										"$ref": "AAAAAAFTdlnU13ymhTs="
+									},
+									"name": "creates and assigns to SensorEndpoint",
+									"end1": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTdl4JroHirO0=",
+										"_parent": {
+											"$ref": "AAAAAAFTdl4JroHh/mc="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTdlnU13ymhTs="
+										},
+										"visibility": "public",
+										"navigable": false,
+										"aggregation": "none",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"end2": {
+										"_type": "UMLAssociationEnd",
+										"_id": "AAAAAAFTdl4JroHjB74=",
+										"_parent": {
+											"$ref": "AAAAAAFTdl4JroHh/mc="
+										},
+										"reference": {
+											"$ref": "AAAAAAFTdlbNx3ouJ4Q="
+										},
+										"visibility": "public",
+										"navigable": true,
+										"aggregation": "none",
+										"isReadOnly": false,
+										"isOrdered": false,
+										"isUnique": false,
+										"isDerived": false,
+										"isID": false
+									},
+									"visibility": "public",
+									"isDerived": false
+								}
+							],
+							"visibility": "public",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTdl07joCxruM=",
+									"_parent": {
+										"$ref": "AAAAAAFTdlnU13ymhTs="
+									},
+									"name": "createNode",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTdl2G2oDWxT0=",
+											"_parent": {
+												"$ref": "AAAAAAFTdl07joCxruM="
+											},
+											"name": "name",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": "String",
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										},
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTdl2G24DXb6g=",
+											"_parent": {
+												"$ref": "AAAAAAFTdl07joCxruM="
+											},
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTfEZOidHtJJ4="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "return"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfEqU+wFt0C8=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "WebSocketEndpoint",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfEsaewVPpeE=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEqU+wFt0C8="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfEqU+wFt0C8="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdk4LzXfJBFI="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfEq2sgL35cc=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "WebSocketEndpointFactory",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfEsLwgS3Kgs=",
+									"_parent": {
+										"$ref": "AAAAAAFTfEq2sgL35cc="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfEq2sgL35cc="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdlCXPHhbvR0="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfE2oNRj3UUg=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "IotPlatformInitializationBroker",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfE6BLRwCTr0=",
+									"_parent": {
+										"$ref": "AAAAAAFTfE2oNRj3UUg="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfE2oNRj3UUg="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdk4LzXfJBFI="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfFC9iiuaTu0=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "DataItem",
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfFDTuiy3u8s=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "ConcurrentQueue",
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAFTfF1BBTWwbQA=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "IotPlatformInitializationBrokerFactory",
+							"ownedElements": [
+								{
+									"_type": "UMLInterfaceRealization",
+									"_id": "AAAAAAFTfF2g5Ddw3bM=",
+									"_parent": {
+										"$ref": "AAAAAAFTfF1BBTWwbQA="
+									},
+									"source": {
+										"$ref": "AAAAAAFTfF1BBTWwbQA="
+									},
+									"target": {
+										"$ref": "AAAAAAFTdlCXPHhbvR0="
+									},
+									"visibility": "public"
+								}
+							],
+							"visibility": "public",
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false,
+							"isActive": false
+						},
+						{
+							"_type": "UMLInterface",
+							"_id": "AAAAAAFTfDxZuYmanCw=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"name": "Pipeline",
+							"visibility": "public",
+							"operations": [
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfDx1u4tbHO4=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDxZuYmanCw="
+									},
+									"name": "setInboundChannel",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfDz97ozH/qI=",
+											"_parent": {
+												"$ref": "AAAAAAFTfDx1u4tbHO4="
+											},
+											"name": "node",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTdk4LzXfJBFI="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								},
+								{
+									"_type": "UMLOperation",
+									"_id": "AAAAAAFTfDy6+Yvo9yc=",
+									"_parent": {
+										"$ref": "AAAAAAFTfDxZuYmanCw="
+									},
+									"name": "setOutboundChannel",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"parameters": [
+										{
+											"_type": "UMLParameter",
+											"_id": "AAAAAAFTfD0slI1s6iQ=",
+											"_parent": {
+												"$ref": "AAAAAAFTfDy6+Yvo9yc="
+											},
+											"name": "node",
+											"visibility": "public",
+											"isStatic": false,
+											"isLeaf": false,
+											"type": {
+												"$ref": "AAAAAAFTdk4LzXfJBFI="
+											},
+											"isReadOnly": false,
+											"isOrdered": false,
+											"isUnique": false,
+											"direction": "in"
+										}
+									],
+									"concurrency": "sequential",
+									"isQuery": false,
+									"isAbstract": false
+								}
+							],
+							"isAbstract": false,
+							"isFinalSpecialization": false,
+							"isLeaf": false
 						}
 					],
 					"visible": true,
@@ -6920,7 +7827,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -7264,7 +8171,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -8402,7 +9309,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -8831,7 +9738,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -10599,7 +11506,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -11081,7 +11988,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -11535,7 +12442,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -11849,7 +12756,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -12133,7 +13040,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -12697,7 +13604,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -13168,7 +14075,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -13452,7 +14359,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -13759,7 +14666,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Main)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -14094,922 +15001,6 @@
 							}
 						}
 					]
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTe6hbG1rykEk=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "ApplicationContextLoader",
-					"ownedElements": [
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFTfDf/4W84ZBk=",
-							"_parent": {
-								"$ref": "AAAAAAFTe6hbG1rykEk="
-							},
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTfDf/4W85IA4=",
-								"_parent": {
-									"$ref": "AAAAAAFTfDf/4W84ZBk="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTe6hbG1rykEk="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTfDf/4W86F40=",
-								"_parent": {
-									"$ref": "AAAAAAFTfDf/4W84ZBk="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTfDdp2mr7ZkI="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "composite",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFTfEN6+rUY7c8=",
-							"_parent": {
-								"$ref": "AAAAAAFTe6hbG1rykEk="
-							},
-							"name": "creates",
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTfEN6+rUZLKk=",
-								"_parent": {
-									"$ref": "AAAAAAFTfEN6+rUY7c8="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTe6hbG1rykEk="
-								},
-								"visibility": "public",
-								"navigable": false,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTfEN6+rUa3f0=",
-								"_parent": {
-									"$ref": "AAAAAAFTfEN6+rUY7c8="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTfDxZuYmanCw="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						}
-					],
-					"visibility": "public",
-					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFTfDkYHHUrR/Q=",
-							"_parent": {
-								"$ref": "AAAAAAFTe6hbG1rykEk="
-							},
-							"name": "nodeContainer",
-							"visibility": "private",
-							"isStatic": false,
-							"isLeaf": false,
-							"type": {
-								"$ref": "AAAAAAFTdkrqhXdb0O4="
-							},
-							"isReadOnly": false,
-							"isOrdered": false,
-							"isUnique": false,
-							"isDerived": false,
-							"aggregation": "none",
-							"isID": false
-						}
-					],
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfDpyKXhC3DQ=",
-							"_parent": {
-								"$ref": "AAAAAAFTe6hbG1rykEk="
-							},
-							"name": "loadApplicationContext",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfDrE+njQJN8=",
-									"_parent": {
-										"$ref": "AAAAAAFTfDpyKXhC3DQ="
-									},
-									"name": "filePath",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "String",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLObject",
-					"_id": "AAAAAAFTe6iO6lvuKs8=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Object1",
-					"visibility": "public"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfDdp2mr7ZkI=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Application",
-					"visibility": "public",
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfEGbkZ7huEU=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDdp2mr7ZkI="
-							},
-							"name": "run",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfDwaYYh9an4=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "OneToManyPipeline",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfD1AiY5ibBI=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"target": {
-								"$ref": "AAAAAAFTfDxZuYmanCw="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFTfD4YvJblHrM=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"name": "inboundChannel",
-							"visibility": "private",
-							"isStatic": false,
-							"isLeaf": false,
-							"type": {
-								"$ref": "AAAAAAFTdk4LzXfJBFI="
-							},
-							"multiplicity": "1",
-							"isReadOnly": false,
-							"isOrdered": false,
-							"isUnique": false,
-							"isDerived": false,
-							"aggregation": "none",
-							"isID": false
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAFTfD44HZeptNY=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"name": "outboundChannel",
-							"visibility": "private",
-							"isStatic": false,
-							"isLeaf": false,
-							"type": {
-								"$ref": "AAAAAAFTdk4LzXfJBFI="
-							},
-							"multiplicity": "1..*",
-							"isReadOnly": false,
-							"isOrdered": false,
-							"isUnique": false,
-							"isDerived": false,
-							"aggregation": "none",
-							"isID": false
-						}
-					],
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfD2hwrRv19c=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"name": "setInboundChannel",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfD2hwrRwXMo=",
-									"_parent": {
-										"$ref": "AAAAAAFTfD2hwrRv19c="
-									},
-									"name": "node",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTdk4LzXfJBFI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfD2u6bRxf5I=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"name": "setOutboundChannel",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfD2u6bRyarA=",
-									"_parent": {
-										"$ref": "AAAAAAFTfD2u6bRxf5I="
-									},
-									"name": "node",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTdk4LzXfJBFI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfD3UcpURrAw=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDwaYYh9an4="
-							},
-							"name": "addOutboundChannel",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfD4I3JZBVE0=",
-									"_parent": {
-										"$ref": "AAAAAAFTfD3UcpURrAw="
-									},
-									"name": "node",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTdk4LzXfJBFI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLInterface",
-					"_id": "AAAAAAFTfDxZuYmanCw=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Pipeline",
-					"visibility": "public",
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfDx1u4tbHO4=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDxZuYmanCw="
-							},
-							"name": "setInboundChannel",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfDz97ozH/qI=",
-									"_parent": {
-										"$ref": "AAAAAAFTfDx1u4tbHO4="
-									},
-									"name": "node",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTdk4LzXfJBFI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfDy6+Yvo9yc=",
-							"_parent": {
-								"$ref": "AAAAAAFTfDxZuYmanCw="
-							},
-							"name": "setOutboundChannel",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfD0slI1s6iQ=",
-									"_parent": {
-										"$ref": "AAAAAAFTfDy6+Yvo9yc="
-									},
-									"name": "node",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTdk4LzXfJBFI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfEZOidHtJJ4=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "RestEndpoint",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfEdZOtbsrgI=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEZOidHtJJ4="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfEZOidHtJJ4="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdk4LzXfJBFI="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfEaKGdKdbJg=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEZOidHtJJ4="
-							},
-							"name": "getName",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfEbG7tRavVg=",
-									"_parent": {
-										"$ref": "AAAAAAFTfEaKGdKdbJg="
-									},
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "String",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "return"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfEaf6dMqU4s=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEZOidHtJJ4="
-							},
-							"name": "onDataReceived",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfEcX3tT/RRs=",
-									"_parent": {
-										"$ref": "AAAAAAFTfEaf6dMqU4s="
-									},
-									"name": "ConcurrentQueue",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfEcX3tUAAYE=",
-									"_parent": {
-										"$ref": "AAAAAAFTfEaf6dMqU4s="
-									},
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "void",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "return"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfEfvOt1UDlM=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "RestEndpointFactory",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfEhCUuOf5Ro=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEfvOt1UDlM="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfEfvOt1UDlM="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdlCXPHhbvR0="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTfEj0g7RzIhA=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEfvOt1UDlM="
-							},
-							"name": "createNode",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfEj0g7R0zag=",
-									"_parent": {
-										"$ref": "AAAAAAFTfEj0g7RzIhA="
-									},
-									"name": "name",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "String",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTfEj0g7R1+AY=",
-									"_parent": {
-										"$ref": "AAAAAAFTfEj0g7RzIhA="
-									},
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTfEZOidHtJJ4="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "return"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTdlnU13ymhTs=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "SystemTelemetrySensorFactory",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTdloVXnz3Vx4=",
-							"_parent": {
-								"$ref": "AAAAAAFTdlnU13ymhTs="
-							},
-							"source": {
-								"$ref": "AAAAAAFTdlnU13ymhTs="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdlCXPHhbvR0="
-							},
-							"visibility": "public"
-						},
-						{
-							"_type": "UMLAssociation",
-							"_id": "AAAAAAFTdl4JroHh/mc=",
-							"_parent": {
-								"$ref": "AAAAAAFTdlnU13ymhTs="
-							},
-							"name": "creates and assigns to SensorEndpoint",
-							"end1": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTdl4JroHirO0=",
-								"_parent": {
-									"$ref": "AAAAAAFTdl4JroHh/mc="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTdlnU13ymhTs="
-								},
-								"visibility": "public",
-								"navigable": false,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"end2": {
-								"_type": "UMLAssociationEnd",
-								"_id": "AAAAAAFTdl4JroHjB74=",
-								"_parent": {
-									"$ref": "AAAAAAFTdl4JroHh/mc="
-								},
-								"reference": {
-									"$ref": "AAAAAAFTdlbNx3ouJ4Q="
-								},
-								"visibility": "public",
-								"navigable": true,
-								"aggregation": "none",
-								"isReadOnly": false,
-								"isOrdered": false,
-								"isUnique": false,
-								"isDerived": false,
-								"isID": false
-							},
-							"visibility": "public",
-							"isDerived": false
-						}
-					],
-					"visibility": "public",
-					"operations": [
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFTdl07joCxruM=",
-							"_parent": {
-								"$ref": "AAAAAAFTdlnU13ymhTs="
-							},
-							"name": "createNode",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTdl2G2oDWxT0=",
-									"_parent": {
-										"$ref": "AAAAAAFTdl07joCxruM="
-									},
-									"name": "name",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "String",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFTdl2G24DXb6g=",
-									"_parent": {
-										"$ref": "AAAAAAFTdl07joCxruM="
-									},
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFTfEZOidHtJJ4="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "return"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						}
-					],
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfEqU+wFt0C8=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "WebSocketEndpoint",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfEsaewVPpeE=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEqU+wFt0C8="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfEqU+wFt0C8="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdk4LzXfJBFI="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfEq2sgL35cc=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "WebSocketEndpointFactory",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfEsLwgS3Kgs=",
-							"_parent": {
-								"$ref": "AAAAAAFTfEq2sgL35cc="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfEq2sgL35cc="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdlCXPHhbvR0="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfE2oNRj3UUg=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "IotPlatformInitializationBroker",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfE6BLRwCTr0=",
-							"_parent": {
-								"$ref": "AAAAAAFTfE2oNRj3UUg="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfE2oNRj3UUg="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdk4LzXfJBFI="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfFC9iiuaTu0=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "DataItem",
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfFDTuiy3u8s=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "ConcurrentQueue",
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFTfF1BBTWwbQA=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "IotPlatformInitializationBrokerFactory",
-					"ownedElements": [
-						{
-							"_type": "UMLInterfaceRealization",
-							"_id": "AAAAAAFTfF2g5Ddw3bM=",
-							"_parent": {
-								"$ref": "AAAAAAFTfF1BBTWwbQA="
-							},
-							"source": {
-								"$ref": "AAAAAAFTfF1BBTWwbQA="
-							},
-							"target": {
-								"$ref": "AAAAAAFTdlCXPHhbvR0="
-							},
-							"visibility": "public"
-						}
-					],
-					"visibility": "public",
-					"isAbstract": false,
-					"isFinalSpecialization": false,
-					"isLeaf": false,
-					"isActive": false
 				}
 			],
 			"visibility": "public"
