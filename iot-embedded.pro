@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 INCLUDEPATH += pipeline \
+               pipeline/utils \
                plugin/interfaces \
                plugin/interfaces/sensor
 
@@ -22,7 +23,9 @@ SOURCES += main.cpp \
     plugin/sensor/sensorprocessor.cpp \
     plugin/sensor/system_telemetry/systemtelemetryprocessor.cpp \
     plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp \
-    plugin/sensor/system_telemetry/systemdataprovider.cpp
+    plugin/sensor/system_telemetry/systemdataprovider.cpp \
+    core/applicationcontextloader.cpp \
+    core/nodecontainer.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -39,5 +42,7 @@ HEADERS += \
     plugin/sensor/sensorprocessor.h \
     plugin/sensor/system_telemetry/systemtelemetryprocessor.h \
     plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h \
-    plugin/sensor/system_telemetry/systemdataprovider.h
+    plugin/sensor/system_telemetry/systemdataprovider.h \
+    core/applicationcontextloader.h \
+    core/nodecontainer.h
 

@@ -3,7 +3,7 @@
 
 const QString TestEndpoint::TAG = "TestEndpoint";
 
-TestEndpoint::TestEndpoint(QObject *parent) : Node(parent)
+TestEndpoint::TestEndpoint(QString &name, QObject *parent) : Node(name, parent)
 {
 
 }
@@ -14,6 +14,11 @@ void TestEndpoint::bang()
 
     test_queue_.enqueue(DataItem());
     emit dataSent(&test_queue_);
+}
+
+QString TestEndpoint::getName()
+{
+    return "bang!";
 }
 
 void TestEndpoint::onDataReceived(ConcurrentQueue<DataItem> *data)

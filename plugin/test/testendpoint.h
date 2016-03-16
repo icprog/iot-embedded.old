@@ -8,9 +8,11 @@ class TestEndpoint : public Node
 {
     Q_OBJECT
 public:
-    explicit TestEndpoint(QObject *parent = 0);
+    explicit TestEndpoint(QString &name, QObject *parent = 0);
 
     void bang();
+
+    QString getName() override final;
 
 public slots:
     void onDataReceived(ConcurrentQueue<DataItem>* data) override;

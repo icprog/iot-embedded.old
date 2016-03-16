@@ -31,8 +31,9 @@ int main(int argc, char *argv[])
 //    TestEndpoint* e = dynamic_cast<TestEndpoint*>(n_a);
 //    e->bang();
 
+    QString n_a_name = "SystemTelemetrySensor";
     NodeFactory* nf2 = new SystemTelemetrySensorFactory(&a);
-    Node *n_a = nf2->createNode();
+    Node *n_a = nf2->createNode(n_a_name);
 
 
     return a.exec();

@@ -7,7 +7,7 @@
 class SystemTelemetryProcessor: public SensorProcessor
 {
 public:
-    explicit SystemTelemetryProcessor(QObject *parent = 0);
+    explicit SystemTelemetryProcessor(QSettings * settings, QObject *parent = 0);
 
 public slots:
     void onData(ConcurrentQueue<DataItem> *queue);
@@ -23,6 +23,10 @@ private:
     QFile* proc_stat_;
 
     SystemDataProvider *data_provider_;
+
+    double load_avg_;
+    double mem_usage_;
+    double cpu_usage_;
 };
 
 #endif // SYSTEMTELEMETRYSENSOR_H

@@ -16,7 +16,8 @@ class SystemTelemetrySensorFactory : public QObject, public NodeFactory
 
 public:
     explicit SystemTelemetrySensorFactory(QObject *parent = 0);
-    Node *createNode() override final;
+    Node *createNode(QString &node_name) override final;
+    QByteArray getNodeClassName() override final;
 
 signals:
 

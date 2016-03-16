@@ -11,16 +11,19 @@ class SensorProcessor : public QObject
 {
     Q_OBJECT
 public:
-    explicit SensorProcessor(QObject *parent = 0);
+    explicit SensorProcessor(QSettings *settings, QObject *parent = 0);
+
+    void setSettings(QSettings *settings);
 
 signals:
-    void dataReady(ConcurrentQueue<DataItem>* queue);
+    void dataReady();
 
 public slots:
     virtual void onData(ConcurrentQueue<DataItem>* queue)=0;
 protected:
     QTimer* timer_;
     QSettings* settings_;
+
 };
 
 #endif // SENSORPROCESSOR_H

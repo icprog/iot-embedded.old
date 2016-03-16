@@ -1,6 +1,7 @@
 #ifndef SYSTEMDATAPROVIDER_H
 #define SYSTEMDATAPROVIDER_H
 
+
 #include <QObject>
 #include <QFile>
 

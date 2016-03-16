@@ -1,10 +1,11 @@
 #include "systemtelemetryprocessor.h"
-#include "QThread"
-#include "qdebug.h"
+#include <QDebug>
+#include <QThread>
+#include "dataitem.h"
 
 const QString SystemTelemetryProcessor::TAG = "SystemTelemetryProcessor";
 
-SystemTelemetryProcessor::SystemTelemetryProcessor(QObject* parent) : SensorProcessor(parent)
+SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject* parent) : SensorProcessor(settings, parent)
 {
     qDebug()<<TAG<<": constructor() from thread: "<<QThread::currentThreadId();
     /* test code */
@@ -50,15 +51,16 @@ void SystemTelemetryProcessor::onTimerTimeout()
     qDebug()<<TAG<<": onTimerTimeout() from thread: "<<QThread::currentThreadId();
 
     try{
-        double load_avg = data_provider_->getLoadAverage();
-        qDebug()<<TAG<<": onTimerTimeout() - proc/loadavg: "<<load_avg;
-        double  cpu_usage = data_provider_->getProcessorUsage();
-        qDebug()<<TAG<<": onTimerTimeout() - proc/stat: "<<cpu_usage;
-        double  memory_usage = data_provider_->getMemoryUsage();
-        qDebug()<<TAG<<": onTimerTimeout() - proc/meminfo: "<<memory_usage;
+        double load_avg_ = data_provider_->getLoadAverage();
+//        qDebug()<<TAG<<": onTimerTimeout() - proc/loadavg: "<<load_avg;
+        double  cpu_usage_ = data_provider_->getProcessorUsage();
+//        qDebug()<<TAG<<": onTimerTimeout() - proc/stat: "<<cpu_usage;
+        double  memory_usage_ = data_provider_->getMemoryUsage();
+//        qDebug()<<TAG<<": onTimerTimeout() - proc/meminfo: "<<memory_usage;
     } catch (std::runtime_error e) {
         qDebug()<<TAG<<": onTimerTimeout() - exception caught: "<<e.what();
+        return;
     }
 
-//    QByteArray arr =
+    emit dataReady();
 }
