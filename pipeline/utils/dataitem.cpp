@@ -5,17 +5,7 @@ DataItem::DataItem()
 
 }
 
-QVariantMap DataItem::header() const
-{
-    return header_;
-}
-
-void DataItem::setHeader(const QVariantMap &header)
-{
-    header_ = header;
-}
-
-QVariantMap DataItem::payload() const
+QVariantMap &DataItem::payload()
 {
     return payload_;
 }
@@ -23,4 +13,34 @@ QVariantMap DataItem::payload() const
 void DataItem::setPayload(const QVariantMap &payload)
 {
     payload_ = payload;
+}
+
+QTime DataItem::sendTime() const
+{
+    return send_time_;
+}
+
+void DataItem::setSendTime(const QTime &send_time)
+{
+    send_time_ = send_time;
+}
+
+QByteArray DataItem::senderId() const
+{
+    return sender_id_;
+}
+
+void DataItem::setSenderId(const QByteArray &sender_id)
+{
+    sender_id_ = sender_id;
+}
+
+QByteArray DataItem::payloadType() const
+{
+    return payload_type_;
+}
+
+void DataItem::setPayloadType(const QByteArray &payload_type)
+{
+    payload_type_ = payload_type;
 }
