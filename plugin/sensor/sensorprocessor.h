@@ -17,13 +17,17 @@ public:
 
 signals:
     void dataReady();
+    void signalStart(int delay);
+    void signalStart();
+    void signalStop();
 
 public slots:
     virtual void onData(ConcurrentQueue<DataItem>* queue)=0;
+    virtual void stop() = 0;
+    virtual void start() = 0;
 protected:
     QTimer* timer_;
     QSettings* settings_;
-
 };
 
 #endif // SENSORPROCESSOR_H

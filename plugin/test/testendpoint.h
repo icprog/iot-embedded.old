@@ -15,7 +15,9 @@ public:
     QString getName() override final;
 
 public slots:
-    void onDataReceived(ConcurrentQueue<DataItem>* data) override;
+    void onDataReceived(ConcurrentQueue<DataItem>* data) override final;
+    void start() override final {}
+    void stop() override final {emit onStopped();}
 
 private:
     static const QString TAG;

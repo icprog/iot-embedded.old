@@ -19,10 +19,14 @@ public:
 
 
 public slots:
-    virtual void onDataReceived(ConcurrentQueue<DataItem>* queue);
+    virtual void onDataReceived(ConcurrentQueue<DataItem>* queue) override;
+    virtual void start() override;
+    virtual void stop() override;
+
 
 private:
     SensorProcessor* processor_;
+    const static QString TAG;
 protected:
     QString name_;
     QSettings *settings_;

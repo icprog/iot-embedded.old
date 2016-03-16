@@ -36,7 +36,7 @@ SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject
     this->timer_ = new QTimer(this);
     timer_->setInterval(this->settings_->value("sampleInterval").toInt());
     connect(timer_, &QTimer::timeout, this, &SystemTelemetryProcessor::onTimerTimeout);
-    timer_->start();
+//    timer_->start();
     qDebug()<<TAG<<": constructor() - created and started timer.";
 
 }
@@ -46,17 +46,26 @@ void SystemTelemetryProcessor::onData(ConcurrentQueue<DataItem> *queue)
     qDebug()<<TAG<<": onData() from thread: "<<QThread::currentThreadId();
 }
 
+void SystemTelemetryProcessor::start()
+{
+    connect(this, SIGNAL(signalStart()), this->timer_, SLOT(start()) );
+    emit signalStart();
+}
+
+void SystemTelemetryProcessor::stop()
+{
+    connect(this, &SensorProcessor::signalStop, this->timer_, &QTimer::stop );
+    emit signalStop();
+}
+
 void SystemTelemetryProcessor::onTimerTimeout()
 {
-    qDebug()<<TAG<<": onTimerTimeout() from thread: "<<QThread::currentThreadId();
+//    qDebug()<<TAG<<": onTimerTimeout() from thread: "<<QThread::currentThreadId();
 
     try{
         double load_avg_ = data_provider_->getLoadAverage();
-//        qDebug()<<TAG<<": onTimerTimeout() - proc/loadavg: "<<load_avg;
         double  cpu_usage_ = data_provider_->getProcessorUsage();
-//        qDebug()<<TAG<<": onTimerTimeout() - proc/stat: "<<cpu_usage;
         double  memory_usage_ = data_provider_->getMemoryUsage();
-//        qDebug()<<TAG<<": onTimerTimeout() - proc/meminfo: "<<memory_usage;
     } catch (std::runtime_error e) {
         qDebug()<<TAG<<": onTimerTimeout() - exception caught: "<<e.what();
         return;

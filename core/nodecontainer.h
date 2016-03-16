@@ -15,8 +15,11 @@ public:
     Node* getNode(QString &name);
     NodeFactory* getNodeFactory(QString &class_name);
 
+
     bool loadNodeFactory(QString &file_name);
     bool loadNodeFactoryTestSet();
+
+    void registerNode(Node *node);
 
 signals:
 

@@ -1,5 +1,8 @@
 #include "sensorendpoint.h"
+#include <QDebug>
+#include <QThread>
 
+const QString SensorEndpoint::TAG = "SensorEndpoint";
 SensorEndpoint::SensorEndpoint(QString &name, QObject *parent) : Node(name, parent),
                                                                     name_(name)
 {
@@ -21,6 +24,19 @@ void SensorEndpoint::setProcessor(SensorProcessor *processor)
 void SensorEndpoint::onDataReceived(ConcurrentQueue<DataItem> *queue)
 {
 
+}
+
+void SensorEndpoint::start()
+{
+    qDebug()<<TAG<<": start() from thread: "<<QThread::currentThreadId();
+    processor_->start();
+}
+
+void SensorEndpoint::stop()
+{
+    qDebug()<<TAG<<": stop() from thread: "<<QThread::currentThreadId();
+    processor_->stop();
+    emit onStopped();
 }
 
 QSettings *SensorEndpoint::getSettings() const

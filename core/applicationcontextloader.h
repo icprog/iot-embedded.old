@@ -14,6 +14,8 @@ public:
     void loadApplicationContext(const QString &config_path);
     void loadTestContext();
 
+    void setNodeContainer(NodeContainer *node_container);
+
 signals:
 
 public slots:
@@ -21,6 +23,8 @@ public slots:
 private:
     NodeContainer *node_container_;
     QSettings *user_settings_;
+
+    void assertNodeContainerExists();
 };
 
 #endif // APPLICATIONCONTEXTLOADER_H

@@ -11,6 +11,8 @@ public:
 
 public slots:
     void onData(ConcurrentQueue<DataItem> *queue);
+    void start() override;
+    void stop() override;
 
 private slots:
     void onTimerTimeout();

@@ -13,11 +13,15 @@ public:
     virtual ~Node() {}
     virtual QString getName() = 0;
 
+
 public slots:
     virtual void onDataReceived(ConcurrentQueue<DataItem> *queue) = 0 ;
+    virtual void start() = 0;
+    virtual void stop() = 0;
 
 signals:
     void dataSent(ConcurrentQueue<DataItem> *queue);
+    void onStopped();
 };
 
 #endif // NODE_H
