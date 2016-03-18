@@ -25,7 +25,9 @@ SOURCES += main.cpp \
     plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp \
     plugin/sensor/system_telemetry/systemdataprovider.cpp \
     core/applicationcontextloader.cpp \
-    core/nodecontainer.cpp
+    core/nodecontainer.cpp \
+    plugin/rest/RestEndpoint.cpp \
+    plugin/rest/RestEndpointFactory.cpp
 
 HEADERS += \
     pipeline/datasink.h \
@@ -44,5 +46,7 @@ HEADERS += \
     plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h \
     plugin/sensor/system_telemetry/systemdataprovider.h \
     core/applicationcontextloader.h \
-    core/nodecontainer.h
+    core/nodecontainer.h \
+    plugin/rest/RestEndpoint.h \
+    plugin/rest/RestEndpointFactory.h
 
