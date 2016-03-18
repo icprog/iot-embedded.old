@@ -9,7 +9,7 @@ class Node : public QObject
 {
     Q_OBJECT
 public:
-    explicit Node(QString& name, QObject *parent = 0) : QObject(parent) {}
+    explicit Node(const QString& name, QObject *parent = 0) : QObject(parent) {}
     virtual ~Node() {}
     virtual QString getName() = 0;
 

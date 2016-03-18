@@ -8,7 +8,7 @@ SystemTelemetrySensorFactory::SystemTelemetrySensorFactory(QObject *parent) : QO
 
 }
 
-Node *SystemTelemetrySensorFactory::createNode(QString &node_name)
+Node *SystemTelemetrySensorFactory::createNode(const QString &node_name)
 {
     qDebug()<< TAG << ": createNode() from thread: " << QThread::currentThreadId();
     QThread *node_thread = new QThread(this);

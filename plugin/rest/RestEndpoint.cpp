@@ -1,6 +1,6 @@
 #include "RestEndpoint.h"
 
-RestEndpoint::RestEndpoint(QString &name, QObject *parent) : Node(name, parent),
+RestEndpoint::RestEndpoint(const QString &name, QObject *parent) : Node(name, parent),
                                                              name_(name)
 {
 

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QSettings>
+#include <memory>
 #include "nodecontainer.h"
 
 class ApplicationContextLoader : public QObject
@@ -22,9 +23,18 @@ public slots:
 
 private:
     NodeContainer *node_container_;
-    QSettings *user_settings_;
+    QSettings *node_settings_;
+    QSettings *pipe_settings_;
 
+//    std::unique_ptr<QSettings> settings_;
     void assertNodeContainerExists();
+
+    const static QString TAG;
+    const static QString NODE_SETTINGS_FILENAME;
+    const static QString PIPE_SETTINGS_FILENAME;
+
+    const static QString NODE_LIB_FILENAME_KEY;
+    const static QString NODE_CLASSNAME_KEY;
 };
 
 #endif // APPLICATIONCONTEXTLOADER_H

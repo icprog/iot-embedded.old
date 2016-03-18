@@ -10,7 +10,7 @@ class SensorEndpoint : public Node
 {
     Q_OBJECT
 public:
-    explicit SensorEndpoint(QString &name, QObject *parent = 0);
+    explicit SensorEndpoint(const QString &name, QObject *parent = 0);
     QString getName() override final;
     QSettings *getSettings() const;
 

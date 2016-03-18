@@ -3,7 +3,7 @@
 #include <QThread>
 
 const QString SensorEndpoint::TAG = "SensorEndpoint";
-SensorEndpoint::SensorEndpoint(QString &name, QObject *parent) : Node(name, parent),
+SensorEndpoint::SensorEndpoint(const QString &name, QObject *parent) : Node(name, parent),
                                                                     name_(name)
 {
     this->settings_ = new QSettings(this);

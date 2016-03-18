@@ -9,7 +9,7 @@ RestEndpointFactory::RestEndpointFactory(QObject *parent) : QObject(parent)
 
 }
 
-Node *RestEndpointFactory::createNode(QString &node_name)
+Node *RestEndpointFactory::createNode(const QString &node_name)
 {
     qDebug()<< TAG << ": createNode() from thread: " << QThread::currentThreadId();
     QThread *thread = new QThread(this);

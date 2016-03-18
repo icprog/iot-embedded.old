@@ -8,7 +8,7 @@
 class RestEndpoint : public Node
 {
 public:
-    RestEndpoint(QString &name, QObject *parent = 0);
+    RestEndpoint(const QString &name, QObject *parent = 0);
     QString getName() override final;
 //    QSettings *getSettings() const;
 

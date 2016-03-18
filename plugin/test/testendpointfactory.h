@@ -14,7 +14,7 @@ class TestEndpointFactory : public QObject, public NodeFactory
 public:
     explicit TestEndpointFactory(QObject *parent = 0);
 
-    Node *createNode(QString &name) override final;
+    Node *createNode(const QString &name) override final;
 
     QByteArray getNodeClassName() override final {return "TestEndpointFactory"; }
 

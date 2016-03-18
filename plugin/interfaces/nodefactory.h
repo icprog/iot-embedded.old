@@ -19,7 +19,7 @@ public:
      * @brief createNode Node instance method
      * @return instance of Node interface
      */
-    virtual Node *createNode(QString &node_name) = 0;
+    virtual Node *createNode(const QString &node_name) = 0;
 
     virtual QByteArray getNodeClassName() = 0;
 
