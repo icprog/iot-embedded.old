@@ -5,7 +5,10 @@
 #include <QTime>
 
 
-
+/**
+ * @brief The DataItem class
+ * @details Common representation of data
+ */
 class DataItem
 {
 public:

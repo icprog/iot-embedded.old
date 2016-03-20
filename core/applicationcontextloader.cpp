@@ -33,22 +33,36 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
         throw new std::runtime_error("nodes.config contains no node description");
     }
 
-    QMap<QString, QStringList> node_connections;
+    // Lambda alert! Used because I can.
+    auto copySettingsToGlobal = [this, &global_settings](const QString &node_name)->void {
+        global_settings.beginGroup(node_name);
+        node_settings_->beginGroup(node_name);
+        QStringList keys = node_settings_->allKeys();
+        foreach (const QString &key, keys) {
+           global_settings.setValue(key, node_settings_->value(key));
+        }
+        global_settings.endGroup();
+        node_settings_->endGroup();
+        global_settings.sync();
+    };
+
+    QMap<QString, QStringList> connections_by_name;
     foreach (const QString &name, node_name_list) {
         node_settings_->beginGroup(name);
         QString lib_filename = node_settings_->value(NODE_LIB_FILENAME_KEY).toString();
         QString classname = node_settings_->value(NODE_CLASSNAME_KEY).toString();
-        node_connections.insert(name, node_settings_->value(NODE_CONNECTIONS_KEY).toStringList());
+        connections_by_name.insert(name, node_settings_->value(NODE_CONNECTIONS_KEY).toStringList());
         node_settings_->endGroup();
 
         node_container_->loadNodeFactory(lib_filename);
         Node * node = node_container_->getNodeFactory(classname)->createNode(name);
         node_container_->registerNode(node);
 
+        copySettingsToGlobal(name);
     }
 
     /// Load and create pipelines
-    foreach (const QString &name, node_connections.keys()) {
+    foreach (const QString &name, connections_by_name.keys()) {
         Node *in = nullptr;
         try {
             in = node_container_->getNode(name);
@@ -57,7 +71,7 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
             throw new std::runtime_error(msg.toStdString());
         }
         Pipeline *pipe = new OneToManyPipeline(this);
-        foreach (const QString &connection, node_connections[name]) {
+        foreach (const QString &connection, connections_by_name[name]) {
             Node *out = node_container_->getNode(connection);
 
             pipe->setInboundChannel(in);
@@ -65,6 +79,7 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
         }
         pipeline_container_.insert("name", pipe);
     }
+
 
 
 
