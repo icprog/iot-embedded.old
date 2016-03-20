@@ -13,6 +13,7 @@ class OneToManyPipeline : public QObject, public Pipeline
 
 public:
     explicit OneToManyPipeline(QObject *parent = 0);
+    virtual ~OneToManyPipeline();
 
     void setInboundChannel(Node *channel) override final;
     void setOutboundChannel(Node *channel) override final;

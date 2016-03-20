@@ -23,5 +23,5 @@ Node *RestEndpointFactory::createNode(const QString &node_name)
 
 QByteArray RestEndpointFactory::getNodeClassName()
 {
-    return TAG.toLocal8Bit();
+    return "RestEndpoint";
 }

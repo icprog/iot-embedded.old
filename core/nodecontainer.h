@@ -12,8 +12,8 @@ class NodeContainer : public QObject
 public:
     explicit NodeContainer(QObject *parent = 0);
 
-    Node* getNode(QString &name);
-    NodeFactory* getNodeFactory(QString &class_name);
+    Node* getNode(const QString &name);
+    NodeFactory* getNodeFactory(const QString &class_name);
 
 
     bool loadNodeFactory(QString &file_name);

@@ -23,5 +23,5 @@ Node *SystemTelemetrySensorFactory::createNode(const QString &node_name)
 
 QByteArray SystemTelemetrySensorFactory::getNodeClassName()
 {
-    return TAG.toLocal8Bit();
+    return "SystemTelemetrySensor";
 }

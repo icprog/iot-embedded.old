@@ -6,6 +6,11 @@ OneToManyPipeline::OneToManyPipeline(QObject *parent) : QObject(parent),
 
 }
 
+OneToManyPipeline::~OneToManyPipeline()
+{
+//    disconnect()
+}
+
 void OneToManyPipeline::setInboundChannel(Node *channel){
     this->inbound_channel_ = channel;
 

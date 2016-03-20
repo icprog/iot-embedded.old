@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 
 
     context.loadTestContext();
-    context.loadApplicationContext("/home/jakub/iot-embedded.config");
-    context.loadApplicationContext("zzz");
+    context.loadApplicationContext("/home/jakub");
+//    context.loadApplicationContext("zzz");
     context.dumpObjectTree();
 
 //    QString n_a_name = "SystemTelemetrySensor";
