@@ -15,12 +15,12 @@ public:
 
 
 public slots:
-    virtual void onDataReceived(ConcurrentQueue<DataItem> *queue) = 0 ;
+    virtual void onDataReceived(DataItem data) = 0 ;
     virtual void start() = 0;
     virtual void stop() = 0;
 
 signals:
-    void dataSent(ConcurrentQueue<DataItem> *queue);
+    void dataSent(DataItem data);
     void onStopped();
 };
 

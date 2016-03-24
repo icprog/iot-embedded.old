@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QSettings>
+#include <QNetworkAccessManager>
 #include "node.h"
 
 class RestEndpoint : public Node
@@ -13,7 +14,7 @@ public:
 //    QSettings *getSettings() const;
 
 public slots:
-    virtual void onDataReceived(ConcurrentQueue<DataItem>* queue) override;
+    virtual void onDataReceived(DataItem data) override;
     virtual void start() override;
     virtual void stop() override;
 
@@ -21,6 +22,8 @@ private:
     const static QString TAG;
     QString name_;
     QSettings *settings;
+
+    QNetworkAccessManager *network_manager_;
 };
 
 #endif // RESTENDPOINT_H

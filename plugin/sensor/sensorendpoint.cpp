@@ -19,9 +19,10 @@ void SensorEndpoint::setProcessor(SensorProcessor *processor)
     processor_ = processor;
     processor_->setParent(this);
     processor_->setSettings(settings_);
+    connect(processor, &SensorProcessor::dataReady, this, &SensorEndpoint::onSensorDataAvaliable);
 }
 
-void SensorEndpoint::onDataReceived(ConcurrentQueue<DataItem> *queue)
+void SensorEndpoint::onDataReceived(DataItem data)
 {
 
 }
@@ -37,6 +38,11 @@ void SensorEndpoint::stop()
     qDebug()<<TAG<<": stop() from thread: "<<QThread::currentThreadId();
     processor_->stop();
     emit onStopped();
+}
+
+void SensorEndpoint::onSensorDataAvaliable(DataItem data)
+{
+
 }
 
 QSettings *SensorEndpoint::getSettings() const

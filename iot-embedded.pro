@@ -5,6 +5,7 @@ CONFIG += c++11
 
 TARGET = iot-embedded
 CONFIG += console
+QT += network
 CONFIG -= app_bundle
 
 TEMPLATE = app

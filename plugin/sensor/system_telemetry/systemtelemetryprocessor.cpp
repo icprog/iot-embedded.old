@@ -9,10 +9,10 @@ SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject
 {
     qDebug()<<TAG<<": constructor() from thread: "<<QThread::currentThreadId();
     /* test code */
-    this->settings_->setValue("loadAvgPath", "/proc/loadavg");
-    this->settings_->setValue("meminfoPath", "/proc/meminfo");
-    this->settings_->setValue("statPath", "/proc/stat");
-    this->settings_->setValue("sampleInterval", 500);
+//    this->settings_->setValue("loadAvgPath", "/proc/loadavg");
+//    this->settings_->setValue("meminfoPath", "/proc/meminfo");
+//    this->settings_->setValue("statPath", "/proc/stat");
+//    this->settings_->setValue("sampleInterval", 500);
     /*   */
 
 
@@ -23,6 +23,9 @@ SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject
     this->proc_stat_ = new QFile(this->settings_->value("statPath").toString(), this);
     qDebug()<<TAG<<": constructor() - /proc files handler created.";
 
+    this->load_avg_sensor_id_ = settings_->value("loadAvgSensorID").toInt();
+    this->mem_usage_sensor_id_ = settings_->value("memInfoSensorID").toInt();
+    this->cpu_usage_sensor_id_ = settings_->value("cpuUsageSensorID").toInt();
     // Data provider setup
     data_provider_ = new SystemDataProvider(this);
     if(proc_loadavg_->exists())
@@ -41,7 +44,7 @@ SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject
 
 }
 
-void SystemTelemetryProcessor::onData(ConcurrentQueue<DataItem> *queue)
+void SystemTelemetryProcessor::onData(DataItem data)
 {
     qDebug()<<TAG<<": onData() from thread: "<<QThread::currentThreadId();
 }
@@ -63,13 +66,32 @@ void SystemTelemetryProcessor::onTimerTimeout()
 //    qDebug()<<TAG<<": onTimerTimeout() from thread: "<<QThread::currentThreadId();
 
     try{
-        double load_avg_ = data_provider_->getLoadAverage();
-        double  cpu_usage_ = data_provider_->getProcessorUsage();
-        double  memory_usage_ = data_provider_->getMemoryUsage();
+        load_avg_ = data_provider_->getLoadAverage();
+        cpu_usage_ = data_provider_->getProcessorUsage();
+        mem_usage_ = data_provider_->getMemoryUsage();
     } catch (std::runtime_error e) {
         qDebug()<<TAG<<": onTimerTimeout() - exception caught: "<<e.what();
         return;
     }
 
-    emit dataReady();
+    DataItem load_avg_item;
+    load_avg_item.setPayloadType("sensor");
+    load_avg_item.payload().insert("value", load_avg_);
+    load_avg_item.payload().insert("time", QTime::currentTime());
+    load_avg_item.payload().insert("id", load_avg_sensor_id_);
+    emit dataReady(load_avg_item);
+
+    DataItem cpu_usage_item;
+    cpu_usage_item.setPayloadType("sensor");
+    cpu_usage_item.payload().insert("value", cpu_usage_);
+    cpu_usage_item.payload().insert("time", QTime::currentTime());
+    cpu_usage_item.payload().insert("id", cpu_usage_sensor_id_);
+    emit dataReady(load_avg_item);
+
+    DataItem mem_usage_item;
+    mem_usage_item.setPayloadType("sensor");
+    mem_usage_item.payload().insert("value", mem_usage_);
+    mem_usage_item.payload().insert("time", QTime::currentTime());
+    mem_usage_item.payload().insert("id", mem_usage_sensor_id_);
+    emit dataReady(mem_usage_item);
 }

@@ -10,7 +10,7 @@ public:
     explicit SystemTelemetryProcessor(QSettings * settings, QObject *parent = 0);
 
 public slots:
-    void onData(ConcurrentQueue<DataItem> *queue);
+    void onData(DataItem data);
     void start() override;
     void stop() override;
 
@@ -29,6 +29,10 @@ private:
     double load_avg_;
     double mem_usage_;
     double cpu_usage_;
+
+    int load_avg_sensor_id_;
+    int cpu_usage_sensor_id_;
+    int mem_usage_sensor_id_;
 };
 
 #endif // SYSTEMTELEMETRYSENSOR_H

@@ -11,7 +11,7 @@ QString RestEndpoint::getName()
     return name_;
 }
 
-void RestEndpoint::onDataReceived(ConcurrentQueue<DataItem> *queue)
+void RestEndpoint::onDataReceived(DataItem data)
 {
 
 }

@@ -16,13 +16,13 @@ public:
     void setSettings(QSettings *settings);
 
 signals:
-    void dataReady();
+    void dataReady(DataItem data);
     void signalStart(int delay);
     void signalStart();
     void signalStop();
 
 public slots:
-    virtual void onData(ConcurrentQueue<DataItem>* queue)=0;
+    virtual void onData(DataItem data)=0;
     virtual void stop() = 0;
     virtual void start() = 0;
 protected:

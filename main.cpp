@@ -14,15 +14,9 @@ int main(int argc, char *argv[])
     context.setNodeContainer(container);
 
 
-    context.loadTestContext();
+//    context.loadTestContext();
     context.loadApplicationContext("/home/jakub");
-//    context.loadApplicationContext("zzz");
     context.dumpObjectTree();
-
-//    QString n_a_name = "SystemTelemetrySensor";
-//    NodeFactory* nf2 = new SystemTelemetrySensorFactory(&a);
-//    Node *n_a = nf2->createNode(n_a_name);
-
 
     return a.exec();
 

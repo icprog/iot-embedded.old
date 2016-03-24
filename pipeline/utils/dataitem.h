@@ -34,4 +34,5 @@ private:
     QVariantMap payload_;
 };
 
+
 #endif // DATAITEM_H

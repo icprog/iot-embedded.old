@@ -12,8 +12,8 @@ void TestEndpoint::bang()
 {
     qDebug()<<TAG<< ": BANG! from thread: "<<QThread::currentThreadId();
 
-    test_queue_.enqueue(DataItem());
-    emit dataSent(&test_queue_);
+//    test_queue_.enqueue(DataItem());
+    emit dataSent(DataItem());
 }
 
 QString TestEndpoint::getName()
@@ -21,9 +21,9 @@ QString TestEndpoint::getName()
     return "bang!";
 }
 
-void TestEndpoint::onDataReceived(ConcurrentQueue<DataItem> *data)
+void TestEndpoint::onDataReceived(DataItem data)
 {
-    data->dequeue();
+//    data->dequeue();
     qDebug()<<TAG << ": onDataReceived, thread: " << QThread::currentThreadId();
     bang();
 }

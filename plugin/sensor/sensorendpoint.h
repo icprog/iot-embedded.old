@@ -17,9 +17,10 @@ public:
     void setProcessor(SensorProcessor *processor);
 
 public slots:
-    virtual void onDataReceived(ConcurrentQueue<DataItem>* queue) override;
+    virtual void onDataReceived(DataItem data) override;
     virtual void start() override;
     virtual void stop() override;
+    void onSensorDataAvaliable(DataItem data);
 
 private:
     SensorProcessor* processor_;
