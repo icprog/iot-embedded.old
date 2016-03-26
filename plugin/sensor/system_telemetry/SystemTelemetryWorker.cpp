@@ -1,11 +1,11 @@
-#include "systemtelemetryprocessor.h"
+#include "SystemTelemetryWorker.h"
 #include <QDebug>
 #include <QThread>
 #include "dataitem.h"
 
-const QString SystemTelemetryProcessor::TAG = "SystemTelemetryProcessor";
+const QString SystemTelemetryWorker::TAG = "SystemTelemetryProcessor";
 
-SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject* parent) : SensorProcessor(settings, parent)
+SystemTelemetryWorker::SystemTelemetryWorker(QSettings * settings, QObject* parent) : SensorWorker(settings, parent)
 {
     qDebug()<<TAG<<": constructor() from thread: "<<QThread::currentThreadId();
     /* test code */
@@ -38,30 +38,30 @@ SystemTelemetryProcessor::SystemTelemetryProcessor(QSettings * settings, QObject
     // Timer setup
     this->timer_ = new QTimer(this);
     timer_->setInterval(this->settings_->value("sampleInterval").toInt());
-    connect(timer_, &QTimer::timeout, this, &SystemTelemetryProcessor::onTimerTimeout);
+    connect(timer_, &QTimer::timeout, this, &SystemTelemetryWorker::onTimerTimeout);
 //    timer_->start();
     qDebug()<<TAG<<": constructor() - created and started timer.";
 
 }
 
-void SystemTelemetryProcessor::onData(DataItem data)
+void SystemTelemetryWorker::onData(DataItem data)
 {
     qDebug()<<TAG<<": onData() from thread: "<<QThread::currentThreadId();
 }
 
-void SystemTelemetryProcessor::start()
+void SystemTelemetryWorker::start()
 {
     connect(this, SIGNAL(signalStart()), this->timer_, SLOT(start()) );
     emit signalStart();
 }
 
-void SystemTelemetryProcessor::stop()
+void SystemTelemetryWorker::stop()
 {
-    connect(this, &SensorProcessor::signalStop, this->timer_, &QTimer::stop );
+    connect(this, &SensorWorker::signalStop, this->timer_, &QTimer::stop );
     emit signalStop();
 }
 
-void SystemTelemetryProcessor::onTimerTimeout()
+void SystemTelemetryWorker::onTimerTimeout()
 {
 //    qDebug()<<TAG<<": onTimerTimeout() from thread: "<<QThread::currentThreadId();
 

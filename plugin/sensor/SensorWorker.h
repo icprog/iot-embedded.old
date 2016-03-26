@@ -7,11 +7,11 @@
 #include "utils/concurrentqueue.h"
 #include "utils/dataitem.h"
 
-class SensorProcessor : public QObject
+class SensorWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit SensorProcessor(QSettings *settings, QObject *parent = 0);
+    explicit SensorWorker(QSettings *settings, QObject *parent = 0);
 
     void setSettings(QSettings *settings);
 

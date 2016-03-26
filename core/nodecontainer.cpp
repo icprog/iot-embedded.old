@@ -20,7 +20,7 @@ NodeFactory *NodeContainer::getNodeFactory(const QString &class_name)
     else throw new std::runtime_error("Node Factory of given name not registered.");
 }
 
-#include "plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h"
+#include "plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.h"
 #include "plugin/rest/RestEndpointFactory.h"
 bool NodeContainer::loadNodeFactory(QString &file_name)
 {

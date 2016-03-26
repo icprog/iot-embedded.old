@@ -2,28 +2,28 @@
 #define SENSORENDPOINT_H
 #include <QObject>
 
-#include "node.h"
-#include "sensorprocessor.h"
+#include <SensorNode.h>
+
+#include "SensorWorker.h"
 
 
-class SensorEndpoint : public Node
+class Sensor : public SensorNode
 {
     Q_OBJECT
 public:
-    explicit SensorEndpoint(const QString &name, QObject *parent = 0);
+    explicit Sensor(const QString &name, QObject *parent = 0);
     QString getName() override final;
     QSettings *getSettings() const;
 
-    void setProcessor(SensorProcessor *processor);
+    void setWorker(SensorWorker *processor);
 
 public slots:
-    virtual void onDataReceived(DataItem data) override;
     virtual void start() override;
     virtual void stop() override;
     void onSensorDataAvaliable(DataItem data);
 
 private:
-    SensorProcessor* processor_;
+    SensorWorker* processor_;
     const static QString TAG;
 
 protected:
