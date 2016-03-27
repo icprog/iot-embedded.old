@@ -18,13 +18,8 @@ void Sensor::setWorker(SensorWorker *processor)
 {
     processor_ = processor;
     processor_->setParent(this);
-    processor_->setSettings(settings_);
+    processor_->setNodeName(this->name_);
     connect(processor, &SensorWorker::dataReady, this, &Sensor::onSensorDataAvaliable);
-}
-
-void Sensor::onDataReceived(DataItem data)
-{
-
 }
 
 void Sensor::start()

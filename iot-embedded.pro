@@ -43,6 +43,7 @@ HEADERS += \
     plugin/test/testendpointfactory.h \
     pipeline/utils/concurrentqueue.h \
     pipeline/utils/dataitem.h \
+    pipeline/onetomanypipeline.h \
     core/applicationcontextloader.h \
     core/nodecontainer.h \
     plugin/rest/RestEndpoint.h \
@@ -53,3 +54,4 @@ HEADERS += \
     plugin/sensor/system_telemetry/SystemTelemetryWorker.h \
     plugin/sensor/system_telemetry/TelemetryDataProvider.h
 
+QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter

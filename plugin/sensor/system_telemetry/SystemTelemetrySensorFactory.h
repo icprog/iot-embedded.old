@@ -13,7 +13,7 @@ class SystemTelemetrySensorFactory : public QObject, public SensorNodeFactory
 {
     Q_OBJECT
 //    Q_PLUGIN_METADATA(IID "com.jmssolutions.iot.embedded.plugin.node.SystemTelemetrySensor")
-    Q_INTERFACES(NodeFactory)
+    Q_INTERFACES(SensorNodeFactory)
 
 public:
     explicit SystemTelemetrySensorFactory(QObject *parent = 0);

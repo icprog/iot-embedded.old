@@ -7,7 +7,7 @@
 class SystemTelemetryWorker: public SensorWorker
 {
 public:
-    explicit SystemTelemetryWorker(QSettings * settings, QObject *parent = 0);
+    explicit SystemTelemetryWorker(const QString &name, QObject *parent = 0);
 
 public slots:
     void onData(DataItem data);

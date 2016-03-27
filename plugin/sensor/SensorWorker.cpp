@@ -1,11 +1,11 @@
 #include "SensorWorker.h"
 
-SensorWorker::SensorWorker(QSettings *settings, QObject *parent) : QObject(parent)
+SensorWorker::SensorWorker(const QString &name, QObject *parent) : QObject(parent)
 {
-    this->settings_ = settings;
+    this->settings_ = new QSettings(this);
 }
 
-void SensorWorker::setSettings(QSettings *settings)
+void SensorWorker::setNodeName(const QString &name)
 {
-    settings_ = settings;
+    this->node_name_ = name;
 }

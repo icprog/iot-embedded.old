@@ -26,7 +26,7 @@ public:
 };
 
 #include <QObject>
-#define NodeFactory_iid "com.jmssolutions.iot.embedded.plugin.node.ConnectivityNodeFactory"
+#define ConnectivityNodeFactory_iid "com.jmssolutions.iot.embedded.plugin.node.ConnectivityNodeFactory"
 Q_DECLARE_INTERFACE(ConnectivityNodeFactory, ConnectivityNodeFactory_iid)
 
 #endif // ConnectivityNODEFACTORY_H

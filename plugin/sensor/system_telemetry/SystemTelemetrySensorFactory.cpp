@@ -14,7 +14,7 @@ SensorNode *SystemTelemetrySensorFactory::createNode(const QString &node_name)
     QThread *node_thread = new QThread(this);
     node_thread->start();
     Sensor *se = new Sensor(node_name);
-    se->setWorker(new SystemTelemetryWorker(se->getSettings(), se));
+    se->setWorker(new SystemTelemetryWorker(se->getName(), se));
     SensorNode *node = se;
     se->moveToThread(node_thread);
     qDebug()<<TAG<<": Node created and moved to dedicated thread." ;

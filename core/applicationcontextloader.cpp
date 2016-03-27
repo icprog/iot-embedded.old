@@ -55,8 +55,8 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
         node_settings_->endGroup();
 
         node_container_->loadNodeFactory(lib_filename);
-        Node * node = node_container_->getNodeFactory(classname)->createNode(name);
-        node_container_->registerNode(node);
+//        Node * node = node_container_->getNodeFactory(classname)->createNode(name);
+//        node_container_->registerNode(node);
 
         copySettingsToGlobal(name);
     }
@@ -65,17 +65,17 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
     foreach (const QString &name, connections_by_name.keys()) {
         Node *in = nullptr;
         try {
-            in = node_container_->getNode(name);
+//            in = node_container_->getNode(name);
         } catch (std::runtime_error e) {
             QString msg = "Cannot create connection: node " + name + "not found";
             throw new std::runtime_error(msg.toStdString());
         }
         Pipeline *pipe = new OneToManyPipeline(this);
         foreach (const QString &connection, connections_by_name[name]) {
-            Node *out = node_container_->getNode(connection);
+//            Node *out = node_container_->getNode(connection);
 
-            pipe->setInboundChannel(in);
-            pipe->setOutboundChannel(out);
+//            pipe->setInboundChannel(in);
+//            pipe->setOutboundChannel(out);
         }
         pipeline_container_.insert("name", pipe);
     }
@@ -90,13 +90,13 @@ void ApplicationContextLoader::loadTestContext()
     assertNodeContainerExists();
     QString sts_factory_name = "SystemTelemetrySensor";
     QString sensor_name = "SysTelemetrySensor1";
-    node_container_->loadNodeFactoryTestSet();
-    Node *sts1 = node_container_->getNodeFactory(sts_factory_name)->createNode(sensor_name);
-    node_container_->registerNode(sts1);
-    Pipeline *pipe = new OneToManyPipeline(this);
-    pipe->setInboundChannel(node_container_->getNode(sensor_name));
+//    node_container_->loadNodeFactoryTestSet();
+//    Node *sts1 = node_container_->getNodeFactory(sts_factory_name)->createNode(sensor_name);
+//    node_container_->registerNode(sts1);
+//    Pipeline *pipe = new OneToManyPipeline(this);
+//    pipe->setInboundChannel(node_container_->getNode(sensor_name));
 
-    sts1->start();
+//    sts1->start();
 
 }
 

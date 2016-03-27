@@ -5,17 +5,11 @@
 
 const QString SystemTelemetryWorker::TAG = "SystemTelemetryProcessor";
 
-SystemTelemetryWorker::SystemTelemetryWorker(QSettings * settings, QObject* parent) : SensorWorker(settings, parent)
+SystemTelemetryWorker::SystemTelemetryWorker(const QString &name, QObject* parent) : SensorWorker(name, parent)
 {
     qDebug()<<TAG<<": constructor() from thread: "<<QThread::currentThreadId();
-    /* test code */
-//    this->settings_->setValue("loadAvgPath", "/proc/loadavg");
-//    this->settings_->setValue("meminfoPath", "/proc/meminfo");
-//    this->settings_->setValue("statPath", "/proc/stat");
-//    this->settings_->setValue("sampleInterval", 500);
-    /*   */
 
-
+    this->settings_->beginGroup(node_name_);
 
     // File setup
     this->proc_loadavg_ = new QFile(this->settings_->value("loadAvgPath").toString(), this);

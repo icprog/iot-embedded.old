@@ -26,7 +26,7 @@ public:
 };
 
 #include <QObject>
-#define NodeFactory_iid "com.jmssolutions.iot.embedded.plugin.node.BrokerNodeFactory"
+#define BrokerNodeFactory_iid "com.jmssolutions.iot.embedded.plugin.node.BrokerNodeFactory"
 Q_DECLARE_INTERFACE(BrokerNodeFactory, BrokerNodeFactory_iid)
 
 #endif // BrokerNODEFACTORY_H
