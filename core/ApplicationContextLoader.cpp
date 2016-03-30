@@ -1,6 +1,12 @@
 #include "ApplicationContextLoader.h"
 #include <QDebug>
 #include <stdexcept>
+#include <SensorNode.h>
+#include <SensorNodeFactory.h>
+#include <ConnectivityNode.h>
+#include <ConnectivityNodeFactory.h>
+#include <BrokerNode.h>
+#include <BrokerNodeFactory.h>
 
 const QString ApplicationContextLoader::TAG = "ApplicationContextLoader";
 const QString ApplicationContextLoader::NODE_SETTINGS_FILENAME = "nodes.config";
