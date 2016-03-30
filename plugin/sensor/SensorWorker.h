@@ -7,13 +7,13 @@
 #include "utils/concurrentqueue.h"
 #include "utils/dataitem.h"
 
-class SensorProcessor : public QObject
+class SensorWorker : public QObject
 {
     Q_OBJECT
 public:
-    explicit SensorProcessor(QSettings *settings, QObject *parent = 0);
+    explicit SensorWorker(const QString &name, QObject *parent = 0);
 
-    void setSettings(QSettings *settings);
+    void setNodeName(const QString &name);
 
 signals:
     void dataReady(DataItem data);
@@ -28,6 +28,7 @@ public slots:
 protected:
     QTimer* timer_;
     QSettings* settings_;
+    QString node_name_;
 };
 
 #endif // SENSORPROCESSOR_H

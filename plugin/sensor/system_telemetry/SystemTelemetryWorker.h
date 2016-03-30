@@ -1,13 +1,13 @@
 #ifndef SYSTEMTELEMETRYSENSOR_H
 #define SYSTEMTELEMETRYSENSOR_H
-#include "plugin/sensor/sensorprocessor.h"
-#include "systemdataprovider.h"
+#include "plugin/sensor/SensorWorker.h"
+#include "TelemetryDataProvider.h"
 #include <QFile>
 
-class SystemTelemetryProcessor: public SensorProcessor
+class SystemTelemetryWorker: public SensorWorker
 {
 public:
-    explicit SystemTelemetryProcessor(QSettings * settings, QObject *parent = 0);
+    explicit SystemTelemetryWorker(const QString &name, QObject *parent = 0);
 
 public slots:
     void onData(DataItem data);
