@@ -9,13 +9,13 @@ RestEndpointFactory::RestEndpointFactory(QObject *parent) : QObject(parent)
 
 }
 
-Node *RestEndpointFactory::createNode(const QString &node_name)
+ConnectivityNode *RestEndpointFactory::createNode(const QString &node_name)
 {
     qDebug()<< TAG << ": createNode() from thread: " << QThread::currentThreadId();
     QThread *thread = new QThread(this);
     thread->start();
     RestEndpoint *re = new RestEndpoint(node_name);
-    Node *node = re;
+    ConnectivityNode *node = re;
     node->moveToThread(thread);
     qDebug()<<TAG<<": Node created and moved to dedicated thread." ;
     return node;

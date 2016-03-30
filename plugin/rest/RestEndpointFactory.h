@@ -3,17 +3,17 @@
 
 #include <QObject>
 
-#include "nodefactory.h"
+#include <ConnectivityNodeFactory.h>
 
-class RestEndpointFactory : public QObject, public NodeFactory
+class RestEndpointFactory : public QObject, public ConnectivityNodeFactory
 {
     Q_OBJECT
-    Q_INTERFACES(NodeFactory)
+    Q_INTERFACES(ConnectivityNodeFactory)
 
 public:   
     explicit RestEndpointFactory(QObject* parent = 0);
 
-    Node *createNode(const QString &node_name) override final;
+    ConnectivityNode *createNode(const QString &node_name) override final;
 
     QByteArray getNodeClassName() override final;
 

@@ -20,15 +20,15 @@ SOURCES += main.cpp \
     plugin/test/testendpoint.cpp \
     plugin/test/testendpointfactory.cpp \
     pipeline/utils/dataitem.cpp \
-    core/applicationcontextloader.cpp \
-    core/nodecontainer.cpp \
     plugin/rest/RestEndpoint.cpp \
     plugin/rest/RestEndpointFactory.cpp \
     plugin/sensor/SensorWorker.cpp \
     plugin/sensor/Sensor.cpp \
     plugin/sensor/system_telemetry/TelemetryDataProvider.cpp \
     plugin/sensor/system_telemetry/SystemTelemetryWorker.cpp \
-    plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.cpp
+    plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.cpp \
+    core/NodeContainer.cpp \
+    core/ApplicationContextLoader.cpp
 
 HEADERS += \
     plugin/interfaces/SensorNode.h \
@@ -44,14 +44,14 @@ HEADERS += \
     pipeline/utils/concurrentqueue.h \
     pipeline/utils/dataitem.h \
     pipeline/onetomanypipeline.h \
-    core/applicationcontextloader.h \
-    core/nodecontainer.h \
     plugin/rest/RestEndpoint.h \
     plugin/rest/RestEndpointFactory.h \
     plugin/sensor/SensorWorker.h \
     plugin/sensor/Sensor.h \
     plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.h \
     plugin/sensor/system_telemetry/SystemTelemetryWorker.h \
-    plugin/sensor/system_telemetry/TelemetryDataProvider.h
+    plugin/sensor/system_telemetry/TelemetryDataProvider.h \
+    core/NodeContainer.h \
+    core/ApplicationContextLoader.h
 
 QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter

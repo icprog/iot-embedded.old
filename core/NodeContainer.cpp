@@ -1,9 +1,15 @@
-#include "nodecontainer.h"
+#include "NodeContainer.h"
+#include <QDebug>
 #include <stdexcept>
 
 NodeContainer::NodeContainer(QObject *parent) : QObject(parent)
 {
 
+}
+
+NodeContainer::~NodeContainer()
+{
+    qDebug()<<"Destroying NodeContainer";
 }
 
 SensorNode *NodeContainer::getSensor(const QString &name)
@@ -58,15 +64,17 @@ bool NodeContainer::loadNodeFactory(QString &file_name)
         QString name = file_name;
         name.remove("test_lib");
         name.remove(".so");
-        NodeFactory* nf;
+
         if(name=="restendpoint") {
-//            nf = new RestEndpointFactory();
-            factories_.insert(nf->getNodeClassName(), nf);
+            ConnectivityNodeFactory* nf;
+            nf = new RestEndpointFactory();
+            connectivity_node_factories_.insert(nf->getNodeClassName(), nf);
         }
 
         if(name=="systemtelemetrysensor") {
-//            nf = new SystemTelemetrySensorFactory();
-            factories_.insert(nf->getNodeClassName(), nf);
+            SensorNodeFactory* nf;
+            nf = new SystemTelemetrySensorFactory();
+            sensor_node_factories_.insert(nf->getNodeClassName(), nf);
         }
     }
     // do PluginLoader stuff here

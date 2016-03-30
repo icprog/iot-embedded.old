@@ -1,6 +1,6 @@
 #include <QCoreApplication>
 #include <QStringBuilder>
-#include "core/applicationcontextloader.h"
+#include "core/ApplicationContextLoader.h"
 
 
 int main(int argc, char *argv[])
@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("JMSsolutions");
     QCoreApplication a(argc, argv);
 
-    ApplicationContextLoader context;
+    ApplicationContextLoader context(&a);
     NodeContainer* container = new NodeContainer(&context);
     context.setNodeContainer(container);
 

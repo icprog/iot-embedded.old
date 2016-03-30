@@ -18,6 +18,7 @@ class NodeContainer : public QObject
     Q_OBJECT
 public:
     explicit NodeContainer(QObject *parent = 0);
+    ~NodeContainer();
 
     SensorNode* getSensor(const QString &name);
     BrokerNode* getBroker(const QString &name);
@@ -42,8 +43,8 @@ signals:
 public slots:
 
 private:
-    QMap<QString, Node*> nodes_;
-    QMap<QString, NodeFactory*> factories_;
+//    QMap<QString, Node*> nodes_;
+//    QMap<QString, NodeFactory*> factories_;
 
     QMap<QString, SensorNode*> sensor_nodes_;
     QMap<QString, BrokerNode*> broker_nodes_;
