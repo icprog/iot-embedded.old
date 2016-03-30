@@ -27,7 +27,8 @@ SOURCES += main.cpp \
     core/NodeContainer.cpp \
     core/ApplicationContextLoader.cpp \
     plugin/websocket/WebSocketEndpoint.cpp \
-    plugin/iot-broker/IotBroker.cpp
+    plugin/iot-broker/IotBroker.cpp \
+    plugin/iot-broker/IoTBrokerFactory.cpp
 
 HEADERS += \
     plugin/interfaces/SensorNode.h \
@@ -47,6 +48,7 @@ HEADERS += \
     core/NodeContainer.h \
     core/ApplicationContextLoader.h \
     plugin/websocket/WebSocketEndpoint.h \
-    plugin/iot-broker/IotBroker.h
+    plugin/iot-broker/IotBroker.h \
+    plugin/iot-broker/IoTBrokerFactory.h
 
 QMAKE_CXXFLAGS_WARN_OFF += -Wunused-parameter

@@ -2,6 +2,7 @@
 #define IOTBROKER_H
 
 #include <QObject>
+#include <QSettings>
 #include <BrokerNode.h>
 
 class IoTBroker : public BrokerNode
@@ -20,7 +21,11 @@ public slots:
 
 private:
    static const QString TAG;
+   static const QString IOT_BROKER_ID_MAPPING_KEY;
    QString name_;
+   QSettings settings_;
+
+   QMap<QString, int> sensor_id_mapping_;
 
 };
 
