@@ -4,6 +4,9 @@
 #include "dataitem.h"
 
 const QString SystemTelemetryWorker::TAG = "SystemTelemetryProcessor";
+const QString SystemTelemetryWorker::MEM_USAGE_SENSOR_TAG = "mem_usage";
+const QString SystemTelemetryWorker::CPU_USAGE_SENSOR_TAG = "cpu_usage";
+const QString SystemTelemetryWorker::LOAD_AVG_SENSOR_TAG = "load_avg";
 
 SystemTelemetryWorker::SystemTelemetryWorker(const QString &name, QObject* parent) : SensorWorker(name, parent)
 {
@@ -17,9 +20,6 @@ SystemTelemetryWorker::SystemTelemetryWorker(const QString &name, QObject* paren
     this->proc_stat_ = new QFile(this->settings_->value("statPath").toString(), this);
     qDebug()<<TAG<<": constructor() - /proc files handler created.";
 
-    this->load_avg_sensor_id_ = settings_->value("loadAvgSensorID").toInt();
-    this->mem_usage_sensor_id_ = settings_->value("memInfoSensorID").toInt();
-    this->cpu_usage_sensor_id_ = settings_->value("cpuUsageSensorID").toInt();
     // Data provider setup
     data_provider_ = new SystemDataProvider(this);
     if(proc_loadavg_->exists())
@@ -68,24 +68,24 @@ void SystemTelemetryWorker::onTimerTimeout()
         return;
     }
 
-    DataItem load_avg_item;
-    load_avg_item.setPayloadType("sensor");
-    load_avg_item.payload().insert("value", load_avg_);
-    load_avg_item.payload().insert("time", QTime::currentTime());
-    load_avg_item.payload().insert("id", load_avg_sensor_id_);
+    DataItem load_avg_item = createDataItem(load_avg_, LOAD_AVG_SENSOR_TAG);
     emit dataReady(load_avg_item);
 
-    DataItem cpu_usage_item;
-    cpu_usage_item.setPayloadType("sensor");
-    cpu_usage_item.payload().insert("value", cpu_usage_);
-    cpu_usage_item.payload().insert("time", QTime::currentTime());
-    cpu_usage_item.payload().insert("id", cpu_usage_sensor_id_);
-    emit dataReady(load_avg_item);
+    DataItem cpu_usage_item = createDataItem(cpu_usage_, CPU_USAGE_SENSOR_TAG);
+    emit dataReady(cpu_usage_item);
 
-    DataItem mem_usage_item;
-    mem_usage_item.setPayloadType("sensor");
-    mem_usage_item.payload().insert("value", mem_usage_);
-    mem_usage_item.payload().insert("time", QTime::currentTime());
-    mem_usage_item.payload().insert("id", mem_usage_sensor_id_);
+    DataItem mem_usage_item = createDataItem(mem_usage_, MEM_USAGE_SENSOR_TAG);
     emit dataReady(mem_usage_item);
+}
+
+DataItem SystemTelemetryWorker::createDataItem(double value, QString producer)
+{
+    DataItem item;
+    QString sender = TAG+"/"+producer;
+
+    item.setPayloadType("sensor");
+    item.payload().insert("value", value);
+    item.payload().insert("time", QTime::currentTime());
+    item.payload().insert("sender", sender.toUtf8());
+    return item;
 }

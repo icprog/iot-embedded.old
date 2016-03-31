@@ -18,7 +18,12 @@ private slots:
     void onTimerTimeout();
 
 private:
+    DataItem createDataItem(double value, QString producer);
+
     const static QString TAG;
+    const static QString MEM_USAGE_SENSOR_TAG;
+    const static QString CPU_USAGE_SENSOR_TAG;
+    const static QString LOAD_AVG_SENSOR_TAG;
 
     QFile* proc_loadavg_;
     QFile* proc_meminfo_;
@@ -29,10 +34,6 @@ private:
     double load_avg_;
     double mem_usage_;
     double cpu_usage_;
-
-    int load_avg_sensor_id_;
-    int cpu_usage_sensor_id_;
-    int mem_usage_sensor_id_;
 };
 
 #endif // SYSTEMTELEMETRYSENSOR_H
