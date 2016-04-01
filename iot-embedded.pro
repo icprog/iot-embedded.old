@@ -16,38 +16,39 @@ INCLUDEPATH += pipeline \
                plugin/interfaces/sensor
 
 SOURCES += main.cpp \
-    pipeline/onetomanypipeline.cpp \
-    plugin/test/testendpoint.cpp \
-    plugin/test/testendpointfactory.cpp \
     pipeline/utils/dataitem.cpp \
-    plugin/sensor/sensorendpoint.cpp \
-    plugin/sensor/sensorprocessor.cpp \
-    plugin/sensor/system_telemetry/systemtelemetryprocessor.cpp \
-    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.cpp \
-    plugin/sensor/system_telemetry/systemdataprovider.cpp \
-    core/applicationcontextloader.cpp \
-    core/nodecontainer.cpp \
     plugin/rest/RestEndpoint.cpp \
-    plugin/rest/RestEndpointFactory.cpp
+    plugin/rest/RestEndpointFactory.cpp \
+    plugin/sensor/SensorWorker.cpp \
+    plugin/sensor/Sensor.cpp \
+    plugin/sensor/system_telemetry/TelemetryDataProvider.cpp \
+    plugin/sensor/system_telemetry/SystemTelemetryWorker.cpp \
+    plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.cpp \
+    core/NodeContainer.cpp \
+    core/ApplicationContextLoader.cpp \
+    plugin/websocket/WebSocketEndpoint.cpp \
+    plugin/iot-broker/IotBroker.cpp \
+    plugin/iot-broker/IoTBrokerFactory.cpp
 
 HEADERS += \
-    pipeline/datasink.h \
-    pipeline/datasource.h \
-    pipeline/onetomanypipeline.h \
-    pipeline/pipeline.h \
-    plugin/interfaces/node.h \
-    plugin/interfaces/nodefactory.h \
-    plugin/test/testendpoint.h \
-    plugin/test/testendpointfactory.h \
-    pipeline/utils/concurrentqueue.h \
+    plugin/interfaces/SensorNode.h \
+    plugin/interfaces/SensorNodeFactory.h \
+    plugin/interfaces/BrokerNode.h \
+    plugin/interfaces/BrokerNodeFactory.h \
+    plugin/interfaces/ConnectivityNode.h \
+    plugin/interfaces/ConnectivityNodeFactory.h \
     pipeline/utils/dataitem.h \
-    plugin/sensor/sensorendpoint.h \
-    plugin/sensor/sensorprocessor.h \
-    plugin/sensor/system_telemetry/systemtelemetryprocessor.h \
-    plugin/sensor/system_telemetry/systemtelemetrysensorfactory.h \
-    plugin/sensor/system_telemetry/systemdataprovider.h \
-    core/applicationcontextloader.h \
-    core/nodecontainer.h \
     plugin/rest/RestEndpoint.h \
-    plugin/rest/RestEndpointFactory.h
+    plugin/rest/RestEndpointFactory.h \
+    plugin/sensor/SensorWorker.h \
+    plugin/sensor/Sensor.h \
+    plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.h \
+    plugin/sensor/system_telemetry/SystemTelemetryWorker.h \
+    plugin/sensor/system_telemetry/TelemetryDataProvider.h \
+    core/NodeContainer.h \
+    core/ApplicationContextLoader.h \
+    plugin/websocket/WebSocketEndpoint.h \
+    plugin/iot-broker/IotBroker.h \
+    plugin/iot-broker/IoTBrokerFactory.h
 
+QMAKE_CXXFLAGS_WARN_OFF += -Wunused-parameter

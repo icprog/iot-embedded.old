@@ -15,12 +15,12 @@ void DataItem::setPayload(const QVariantMap &payload)
     payload_ = payload;
 }
 
-QTime DataItem::sendTime() const
+QDateTime DataItem::sendTime() const
 {
     return send_time_;
 }
 
-void DataItem::setSendTime(const QTime &send_time)
+void DataItem::setSendTime(const QDateTime &send_time)
 {
     send_time_ = send_time;
 }

@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QSettings>
 #include <memory>
-#include "nodecontainer.h"
+#include "NodeContainer.h"
 #include "onetomanypipeline.h"
 
 class ApplicationContextLoader : public QObject
@@ -24,7 +24,6 @@ public slots:
 
 private:
     NodeContainer *node_container_;
-    QMultiMap<QString, Pipeline*> pipeline_container_;
     QSettings *node_settings_;
     QSettings *pipe_settings_;
 
@@ -32,12 +31,14 @@ private:
     void assertNodeContainerExists();
 
     const static QString TAG;
+
     const static QString NODE_SETTINGS_FILENAME;
     const static QString PIPE_SETTINGS_FILENAME;
 
     const static QString NODE_LIB_FILENAME_KEY;
     const static QString NODE_CLASSNAME_KEY;
     const static QString NODE_CONNECTIONS_KEY;
+    const static QString NODE_TYPE_KEY;
 };
 
 #endif // APPLICATIONCONTEXTLOADER_H

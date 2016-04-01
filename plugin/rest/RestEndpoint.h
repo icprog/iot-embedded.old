@@ -4,17 +4,17 @@
 #include <QObject>
 #include <QSettings>
 #include <QNetworkAccessManager>
-#include "node.h"
+#include <ConnectivityNode.h>
 
-class RestEndpoint : public Node
+class RestEndpoint : public ConnectivityNode
 {
+    Q_OBJECT
 public:
     RestEndpoint(const QString &name, QObject *parent = 0);
     QString getName() override final;
-//    QSettings *getSettings() const;
 
 public slots:
-    virtual void onDataReceived(DataItem data) override;
+    virtual void sendData(DataItem data) override;
     virtual void start() override;
     virtual void stop() override;
 

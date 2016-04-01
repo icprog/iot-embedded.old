@@ -9,7 +9,7 @@ public:
     virtual void setInboundChannel(Node *channel) = 0;
     virtual void setOutboundChannel(Node *channel) = 0;
 };
-Q_DECLARE_METATYPE(QByteArray)
+//Q_DECLARE_METATYPE(QByteArray)
 
 #include <QObject>
 #define Pipeline_iid "com.jmssolutions.iot.embedded.Pipeline"
