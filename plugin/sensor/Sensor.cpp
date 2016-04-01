@@ -37,7 +37,7 @@ void Sensor::stop()
 
 void Sensor::onSensorDataAvaliable(DataItem data)
 {
-
+    emit sensorDataAvaliable(data);
 }
 
 QSettings *Sensor::getSettings() const

@@ -1,4 +1,6 @@
 #include "IotBroker.h"
+#include <QDebug>
+#include <QThread>
 
 const QString IoTBroker::TAG = "IoTBroker";
 const QString IoTBroker::IOT_BROKER_ID_MAPPING_KEY = "sensorId";
@@ -31,5 +33,5 @@ void IoTBroker::stop()
 
 void IoTBroker::processData(DataItem data)
 {
-
+    qDebug()<<TAG<<": processData() from thread: "<<QThread::currentThreadId();
 }

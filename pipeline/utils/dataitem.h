@@ -34,5 +34,6 @@ private:
     QVariantMap payload_;
 };
 
+Q_DECLARE_METATYPE(DataItem)
 
 #endif // DATAITEM_H

@@ -20,6 +20,8 @@ public:
 public slots:
     virtual void start() override;
     virtual void stop() override;
+
+private slots:
     void onSensorDataAvaliable(DataItem data);
 
 private:
