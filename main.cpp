@@ -1,5 +1,6 @@
 #include <QCoreApplication>
-#include <QStringBuilder>
+#include <QMetaObject>
+#include <dataitem.h>
 #include "core/ApplicationContextLoader.h"
 
 
@@ -8,6 +9,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("IoTEmbeddedClient");
     QCoreApplication::setOrganizationName("JMSsolutions");
     QCoreApplication a(argc, argv);
+    qRegisterMetaType<DataItem>();
 
     ApplicationContextLoader context(&a);
     NodeContainer* container = new NodeContainer(&context);

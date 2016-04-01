@@ -37,7 +37,8 @@ void Sensor::stop()
 
 void Sensor::onSensorDataAvaliable(DataItem data)
 {
-
+    data.setSendTime(QDateTime::currentDateTime());
+    emit sensorDataAvaliable(data);
 }
 
 QSettings *Sensor::getSettings() const

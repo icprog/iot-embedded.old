@@ -56,8 +56,13 @@ ConnectivityNodeFactory *NodeContainer::getConnectivityFactory(const QString &na
 
 }
 
-#include "plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.h"
-#include "plugin/rest/RestEndpointFactory.h"
+#include <plugin/rest/RestEndpoint.h>
+#include <plugin/rest/RestEndpointFactory.h>
+#include <plugin/iot-broker/IotBroker.h>
+#include <plugin/iot-broker/IoTBrokerFactory.h>
+#include <plugin/sensor/system_telemetry/SystemTelemetrySensorFactory.h>
+#include <plugin/sensor/Sensor.h>
+
 bool NodeContainer::loadNodeFactory(QString &file_name)
 {
     if(file_name.startsWith("test")) {
@@ -75,6 +80,11 @@ bool NodeContainer::loadNodeFactory(QString &file_name)
             SensorNodeFactory* nf;
             nf = new SystemTelemetrySensorFactory();
             sensor_node_factories_.insert(nf->getNodeClassName(), nf);
+        }
+        if(name=="iotbroker") {
+            BrokerNodeFactory* bf;
+            bf = new IoTBrokerFactory();
+            broker_node_factories_.insert(bf->getNodeClassName(), bf);
         }
     }
     // do PluginLoader stuff here

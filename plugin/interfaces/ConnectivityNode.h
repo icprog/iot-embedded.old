@@ -8,7 +8,7 @@ class ConnectivityNode : public QObject
 {
     Q_OBJECT
 public:
-    explicit ConnectivityNode(const QString& name, QObject *parent = 0) : QObject(parent) {}
+    explicit ConnectivityNode(const QString& name, QObject *parent = 0) : QObject(parent) {Q_UNUSED(name);}
     virtual ~ConnectivityNode() {}
     virtual QString getName() = 0;
 
