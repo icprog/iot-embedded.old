@@ -85,7 +85,7 @@ DataItem SystemTelemetryWorker::createDataItem(double value, QString producer)
 
     item.setPayloadType("sensor");
     item.payload().insert("value", value);
-    item.payload().insert("time", QTime::currentTime());
+    item.payload().insert("time", QDateTime::currentDateTime().toMSecsSinceEpoch());
     item.payload().insert("sender", sender.toUtf8());
     return item;
 }

@@ -46,9 +46,10 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
     auto copySettingsToGlobal = [this, &global_settings](const QString &node_name)->void {
         global_settings.beginGroup(node_name);
         node_settings_->beginGroup(node_name);
+        global_settings.remove(""); /**< Removes all settings in group */
         QStringList keys = node_settings_->allKeys();
         foreach (const QString &key, keys) {
-           global_settings.setValue(key, node_settings_->value(key));
+            global_settings.setValue(key, node_settings_->value(key));
         }
         global_settings.endGroup();
         node_settings_->endGroup();
@@ -84,9 +85,7 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
         return ptr;
     };
 
-    /**
-      Encapsulates routine of making connection between nodes.
-     */
+    ///Encapsulates routine of making connection between nodes.
     auto makeConnection = [](QObject* out, const QString &out_type, QObject* in, const QString &in_type)->void {
         QObject *ptr;
         // Determine type of out node
@@ -124,6 +123,7 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
             cn->start();
         } else qDebug()<<TAG<<": Cannot connect: "<<out_type<<" is not proper node type.";
     };
+
     /// Load plugins and instantiate nodes
     QMap<QString, QStringList> connections_by_name;
     foreach (const QString &name, node_name_list) {
@@ -136,19 +136,29 @@ void ApplicationContextLoader::loadApplicationContext(const QString &config_path
 
         node_container_->loadNodeFactory(lib_filename);
 
-        /// Instantiate node
-        if(type.toLower()=="sensor") {
-            SensorNode* node = node_container_->getSensorFactory(classname)->createNode(name);
-            node_container_->registerNode(node);
-        } else if(type.toLower() == "broker") {
-            BrokerNode* node = node_container_->getBrokerFactory(classname)->createNode(name);
-            node_container_->registerNode(node);
-        } else if(type.toLower() == "connectivity") {
-            ConnectivityNode* node = node_container_->getConnectivityFactory(classname)->createNode(name);
-            node_container_->registerNode(node);
-        } else continue;
-
+        ///Copy settings to global scope (they will be necessarry during node creation)
         copySettingsToGlobal(name);
+
+        try{
+        /// Instantiate node
+            if(type.toLower()=="sensor") {
+                SensorNode* node = node_container_->getSensorFactory(classname)->createNode(name);
+                node_container_->registerNode(node);
+            } else if(type.toLower() == "broker") {
+                BrokerNode* node = node_container_->getBrokerFactory(classname)->createNode(name);
+                node_container_->registerNode(node);
+            } else if(type.toLower() == "connectivity") {
+                ConnectivityNode* node = node_container_->getConnectivityFactory(classname)->createNode(name);
+                node_container_->registerNode(node);
+            } else continue;
+        } catch (std::runtime_error e) {
+            qDebug()<<TAG<<": loadApplicationContext()- Error when creating node: "<<name<<" of class: "<<classname<<". Rolling back settings change.";
+            global_settings.beginGroup(name);
+            global_settings.remove("");
+            global_settings.endGroup();
+        }
+
+
     }
 
     /// Load and create connections

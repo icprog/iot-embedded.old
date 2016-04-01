@@ -18,8 +18,8 @@ public:
     QVariantMap &payload() ;
     void setPayload(const QVariantMap &payload);
 
-    QTime sendTime() const;
-    void setSendTime(const QTime &send_time);
+    QDateTime sendTime() const;
+    void setSendTime(const QDateTime &send_time);
 
     QByteArray senderId() const;
     void setSenderId(const QByteArray &sender_id);
@@ -30,7 +30,7 @@ public:
 private:
     QByteArray payload_type_;
     QByteArray sender_id_;
-    QTime   send_time_;
+    QDateTime  send_time_;
     QVariantMap payload_;
 };
 
