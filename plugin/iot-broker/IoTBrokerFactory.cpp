@@ -3,6 +3,8 @@
 #include <QDebug>
 #include <plugin/iot-broker/IotBroker.h>
 
+#include "JsonMessageFormatter.h"
+
 const QString IoTBrokerFactory::TAG = "IoTBrokerFactory";
 
 IoTBrokerFactory::IoTBrokerFactory(QObject *parent) : QObject(parent)
@@ -16,6 +18,7 @@ BrokerNode *IoTBrokerFactory::createNode(const QString &node_name)
     QThread *thread = new QThread(this);
     thread->start();
     IoTBroker *bn = new IoTBroker(node_name);
+    bn->setMessageFormattingStrategy(new JsonMessageFormatter(bn));
     BrokerNode *node = bn;
     node->moveToThread(thread);
     qDebug()<<TAG<<": Node created and moved to dedicated thread." ;

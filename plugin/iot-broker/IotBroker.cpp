@@ -42,17 +42,15 @@ void IoTBroker::stop()
 void IoTBroker::processData(DataItem data)
 {
     qDebug()<<TAG<<": processData() from thread: "<<QThread::currentThreadId();
-    QJsonObject json;
-    int sensor_id = sensor_id_mapping_[data.senderId()];
-    json["id"] = sensor_id;
-    json["time"] = data.payload()["time"].toLongLong();
-    json["value"] = data.payload()["value"].toDouble();
-    DataItem result;
-    result.setSenderId(name_.toUtf8());
-    result.setSendTime(QDateTime::currentDateTime());
-    result.setPayloadType("iot/json");
-    result.payload().insert("json", QJsonDocument(json).toJson());
 
-    qDebug()<<result.payload()["json"];
-    emit dataProcessed(result);
+    int sensor_id = sensor_id_mapping_[data.senderId()];
+    DataItem response = messageFormattingStrategy_->formatMessage(data, sensor_id, name_);
+
+    qDebug()<<TAG<<": processData(): "<<response.payload()["json"].toString();
+    emit dataProcessed(response);
+}
+
+void IoTBroker::setMessageFormattingStrategy(MessageFormattingStrategy *mfs)
+{
+    messageFormattingStrategy_ = mfs;
 }
