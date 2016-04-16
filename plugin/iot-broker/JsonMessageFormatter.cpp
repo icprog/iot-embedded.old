@@ -17,7 +17,7 @@ DataItem JsonMessageFormatter::formatMessage(DataItem source, int sender_id, QSt
     result.setSenderId(broker_name.toUtf8());
     result.setSendTime(QDateTime::currentDateTime());
     result.setPayloadType("iot/json");
-    result.payload().insert("json", QJsonDocument(json).toJson());
+    result.payload().insert("data", QJsonDocument(json).toJson());
     return result;
 
 }
