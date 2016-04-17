@@ -10,10 +10,12 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
+
 INCLUDEPATH += pipeline \
                pipeline/utils \
                plugin/interfaces \
-               plugin/interfaces/sensor
+               plugin/interfaces/sensor \
+               /usr/include/qt5/QStomp/
 
 SOURCES += main.cpp \
     pipeline/utils/dataitem.cpp \
@@ -28,7 +30,10 @@ SOURCES += main.cpp \
     core/ApplicationContextLoader.cpp \
     plugin/websocket/WebSocketEndpoint.cpp \
     plugin/iot-broker/IotBroker.cpp \
-    plugin/iot-broker/IoTBrokerFactory.cpp
+    plugin/iot-broker/IoTBrokerFactory.cpp \
+    plugin/iot-broker/JsonMessageFormatter.cpp \
+    plugin/iot-broker/StompMessageFormatter.cpp \
+    #plugin/iot-broker/QStomp/qstomp.cpp
 
 HEADERS += \
     plugin/interfaces/SensorNode.h \
@@ -49,6 +54,14 @@ HEADERS += \
     core/ApplicationContextLoader.h \
     plugin/websocket/WebSocketEndpoint.h \
     plugin/iot-broker/IotBroker.h \
-    plugin/iot-broker/IoTBrokerFactory.h
+    plugin/iot-broker/IoTBrokerFactory.h \
+    plugin/iot-broker/MessageFormattingStrategy.h \
+    plugin/iot-broker/JsonMessageFormatter.h \
+    plugin/iot-broker/StompMessageFormatter.h \
+    #plugin/iot-broker/QStomp/qstomp.h \
+    #plugin/iot-broker/QStomp/qstomp_global.h \
+    #plugin/iot-broker/QStomp/qstomp_p.h
 
 QMAKE_CXXFLAGS_WARN_OFF += -Wunused-parameter
+
+LIBS += -lqstomp

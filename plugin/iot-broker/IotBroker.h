@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QSettings>
 #include <BrokerNode.h>
+#include "MessageFormattingStrategy.h"
 
 class IoTBroker : public BrokerNode
 {
@@ -12,7 +13,7 @@ public:
     explicit IoTBroker(const QString& name, QObject *parent = 0);
     virtual ~IoTBroker() {}
     virtual QString getName() override final;
-
+    void setMessageFormattingStrategy(MessageFormattingStrategy *mfs);
 
 public slots:
     virtual void start() override;
@@ -24,6 +25,7 @@ private:
    static const QString IOT_BROKER_ID_MAPPING_KEY;
    QString name_;
    QSettings settings_;
+   MessageFormattingStrategy *messageFormattingStrategy_;
 
    QMap<QString, int> sensor_id_mapping_;
 
